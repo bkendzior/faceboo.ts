@@ -3,9 +3,7 @@
 $("/html") {
   rewrite_links()
   absolutize_srcs()
-  
-  # Remove all script tags not marked with "data-keep" attribute
-  remove_desktop_js();
+
 
   # Needed to begin mobilizing
   remove_all_styles()
@@ -21,7 +19,11 @@ $("/html") {
 
   # Include mw_analytics file to track the mobile site
   @import mw_analytics.ts
-
+  
+  # Remove all script tags not marked with "data-keep" attribute
+  @import keep_desktop_js.ts
+  remove_desktop_js();
+  
   # Late load all the images on the site
   # lateload()
 }

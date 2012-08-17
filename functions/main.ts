@@ -2,6 +2,30 @@
 ### Site Functions
 ####################
 
+# LOG PAGE
+# 
+#  logs the page name, and sets the $page_name variable for future use
+#  
+#   INPUT: 
+#     %page_name - page name that is being imported
+#     %curr_file - file that is calling log_page
+#
+#   OUTPUT:
+#     1. sets the $page_name global variable
+#     2. logs a useful tritium message
+#     3. ?? Imports $page_name file (Not supported yet)
+
+@func Text.log_page(Text %page_name, Text %curr_file) {
+  $page_name = %page_name
+
+  log("--> Importing " + $page_name + " in " + $curr_file)
+
+  // Some day, this will work, and it will be awesome
+  //@import concat("../scripts/",$page_name) 
+}
+
+
+
 # BTN DELEGATE
 # 
 # EXAMPLE CSS
@@ -76,12 +100,15 @@
 # Remove Styles Functions
 @func XMLNode.remove_external_styles() {
   remove(".//link[@rel='stylesheet']")
+  remove(".//link[@rel='Stylesheet']")
+  remove(".//link[@type='text/css']")
 }
 @func XMLNode.remove_internal_styles() {
   remove(".//style")
 }
 @func XMLNode.remove_all_styles() {
-  remove(".//link[@rel='stylesheet']|.//style")
+  remove_external_styles()
+  remove_internal_styles()
 }
 
 # Remove Scripts

@@ -1,3 +1,51 @@
-footer._footer {
+.mw_footer {
+  border-top: 3px solid #666;
+  margin-top: 10px;
+  background-color: #EEE;
+  padding: 5px 10px 10px 10px;
 
+  // Sign Up For Email Specials
+  .mw_email_special {
+    display: block;
+    text-align: center;
+  }
+
+  // Customer Services
+  .mw_customer_service {
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    font-weight: normal;
+    padding: 0px;
+  }
+
+  // Copyright Note
+  .mw_copyright {
+    margin-top: 10px;
+    > a {
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      font-size: $emp_size;
+    }
+  }
+
+  // My Account | My favourites | Shipping & returns
+  // Contact us | Site feedback | FAQ's
+  .mw_acc_footer_bar, .mw_contact_footer_bar {
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    font-weight: normal;
+    
+    a {
+      &:not(:last-of-type)::after {
+        padding: 0 5px;
+        content:"|"
+      }
+    }
+  }
+  * {
+    color: black;
+  }
 }

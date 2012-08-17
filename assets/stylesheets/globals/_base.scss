@@ -20,7 +20,10 @@ body {
 
 a {
   font-size: 13px;
+  
+  // Green Colors
   color: #F4F4F4;
+
   font-weight: bold;
   text-decoration: none;
   word-wrap: break-word;
@@ -35,5 +38,13 @@ img {
 }
 
 input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+}
+
+br {
+  display: none;
+}
+
+.clearer {
   display: none;
 }
