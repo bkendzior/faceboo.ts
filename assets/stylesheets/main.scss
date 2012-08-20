@@ -1,15 +1,14 @@
- @import "compass/reset";
- @import "compass";
+@import "compass/reset";
+@import "compass";
 
 //@import "globals/_reset.scss";
-
 
 // Sprites
 @import "globals/_icons.scss";
 
 // Base file contains all the global styles
 @import "globals/_base.scss";
-//@import "globals/_mixins.scss";
+//@import "globals/_compass.scss";
 
 // File for global Uranium stylings
 @import "globals/_uranium.scss";
