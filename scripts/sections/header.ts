@@ -21,16 +21,39 @@ $("./body//div[@id='container']"){
     }
 
     // Find a store button
-    insert_bottom("a", class:"mw-find_a_store", href:'google.com') {
+    $("./p[@id='header-store']/a") {
+      $find_store = fetch("@href")
+    }
+    insert_bottom("a", class:"mw-find_a_store", href:$find_store) {
       insert("span", class:"mw-find_icon icons-find") 
       insert("span", class:"mw-find_label", "Find A Store") 
     }
-    
+
+    // H&B Logo
+    insert_bottom("a", class:"mw-header-logo", href:'/') {
+      insert("span", class:"icons-header") 
+    }
+   
+    insert_bottom("div", class:"mw-search_box") {
+      move_here("./ancestor::div[@id='header']/form[@id='searchform']") {
+        // Remove the header banner
+        remove("./p[@id='header-banner']")
+        
+        // Add 'go' text to search button
+        $(".//input[@type='submit']") {
+          attributes(value:'Go')
+        }
+      }
+    }
+
+    insert_bottom("a", class:'mw-browse_store', "Browse the store", href:'www.google.com') {
+      add_class("mw_bar3")
+      // TODO: Arrow Icon
+    }
+
     // Remove everything that isn't prefixed with mw-
     $("./*[not(contains(@class,'mw-'))]") {
       remove()
     }
-
-
   }
 }

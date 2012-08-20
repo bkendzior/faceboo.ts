@@ -29,8 +29,8 @@ $error_color: #ee2a24;
 
 // gradients
 $grad1: linear-gradient(top, #fff 0%, #f2f2f2 100%);    // grey gradient
-$grad3: linear-gradient(top, #940086 0%, #6b007f 100%); // purple gradient for box2 (Find Event Box)
-$grad4: linear-gradient(90deg, #d1d1d1 0%, #fff 100%); // dark purple gradient for btn1
+$grad3: linear-gradient(bottom, #343435 0%, #535355 100%); // Dark Gray 
+$grad4: linear-gradient(bottom, #d1d1d1 0%, #fff 100%); // White to Gray 
 $grad5: linear-gradient(top, #d6d6d6 0%, #e7e7e7 100%);
 $grad6: linear-gradient(top, #535188 0%, #706293 50%, #4d4079 50%, #7654ad 100%); //gradient for the countdown numbers
 
@@ -159,11 +159,13 @@ $h3_color: $color3;
 
 @mixin bar3 {
   @include bar_inner_base;
-  background-color: $color4;
-  color: #666;
-  font-size: 13px;
+  @include background($grad3);
+  margin: 0 -10px; 
+  border: 1px solid #777;
+  font-size: 16px;
   font-weight: bold;
-  border: 1px solid #d7d7d7;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 
 @mixin bar4 {
@@ -288,13 +290,16 @@ $h3_color: $color3;
 }
 
 @mixin box2 {
-  padding: 13px;
-  @include background($grad3);
+//  @include background($grad3);
+  
   form {
     @include display-box;
     @include box-sizing(border-box);
 
-    .mw_text_input {
+    overflow: hidden;
+    position: relative;
+
+    input[type='text'] {
       @include box-flex(1);
       @include border-radius(0px);
       @include border-left-radius(3px);
