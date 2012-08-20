@@ -1,4 +1,4 @@
-.mw_footer {
+.mw-footer {
   margin-top: 10px;
   background-color: #F5F5F5;
   padding: 10px 10px 10px 10px;
@@ -6,7 +6,7 @@
   
 
   // Sign Up For Email Specials
-  .mw_email_special {
+  .mw-email_special {
     display: block;
     text-align: center;
     color: $green;
@@ -14,7 +14,7 @@
   }
 
   // Customer Services
-  .mw_customer_service {
+  .mw-customer_service {
     margin-top: 10px;
     display: block;
     text-align: center;
@@ -24,7 +24,7 @@
   }
 
   // Copyright Note
-  .mw_copyright {
+  .mw-copyright {
     margin-top: 10px;
     > a {
       display: block;
@@ -37,7 +37,7 @@
 
   // My Account | My favourites | Shipping & returns
   // Contact us | Site feedback | FAQ's
-  .mw_acc_footer_bar, .mw_contact_footer_bar {
+  .mw-acc_footer_bar, .mw-contact_footer_bar {
     margin-top: 10px;
     display: block;
     text-align: center;

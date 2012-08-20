@@ -1,9 +1,5 @@
 .mw-header {
-  border-bottom: 1px $color3 solid;
   padding: 10px;
-  margin-bottom: 10px; 
-
-  color: black;
 
   .mw-top_header {
     text-align: center;
@@ -45,10 +41,68 @@
     .mw-find_label {
       text-transform: uppercase;
       font-weight: normal;
-      letter-spacing: 0.1em;
+      letter-spacing:0.1em;
       color: #666;
       font-size: 13px;
     }
-  } 
+  }
 
+  // Search Box
+  .mw-search_box {
+    @include box2;
+    margin-bottom: 10px;
+
+    form {
+      height: 30px; 
+    }
+
+    #header-search-bar {
+      width: 100%;
+
+      input {
+        display: block;
+        width: 100%;
+        height: 30px;
+        padding-right: 50px;
+        padding-left: 30px;
+        margin: 0;
+        padding: 7px;
+
+        // Padding for search icons
+        padding-left: 20px;
+        font-size: 13px;
+        color: $gray2;
+      }
+    }
+    
+    // GO
+    #search-go {
+      input[type='submit'] {
+        @extend .mw_btn1; 
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        margin: 0; 
+        font-weight: bold;
+        height: 100%;
+
+        text-transform: uppercase;
+        color: #666;
+        font-size: 13px;
+      }
+    }
+  }
+
+  // Browse The Store
+  .mw-browse_store {
+    @include background($grad3);
+    margin: 0 -10px; 
+    border: 1px solid #777;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+
+  }
 }
