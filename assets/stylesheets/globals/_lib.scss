@@ -42,7 +42,9 @@ $border3: 1px solid #aaa; // border around buttons or boxes
 $mw_border_radius: 3px;
 
 // Font sizes
-$font_size: 13px;
+$base-font-size: 13px;
+$base-line-height: 18px;
+@include establish-baseline();
 $emp_size: 11px;
 
 $h1_size: 22px;
@@ -64,21 +66,21 @@ $h3_color: $color3;
 
 // Headings
 @mixin h1 {
-  font-size: $h1_size;
+  @include adjust-font-size-to($h1_size);
   font-weight: bold;
   padding: 10px;
   color: $h1_color;
 }
 
 @mixin h2 {
-  font-size: $h2_size;
+  @include adjust-font-size-to($h2_size);
   font-weight: bold;
   padding: 10px;
   color: $h2_color;
 }
 
 @mixin h3 {
-  font-size: $h3_size;
+  @include adjust-font-size-to($h3_size);
   font-weight: bold;
   padding: 10px;
   color: $h3_color;
@@ -104,7 +106,7 @@ $h3_color: $color3;
 // Bars and Accordions
 @mixin bar_inner_base {
   display: block;
-  font-size: 2_size;
+  @include adjust-font-size-to($h2_size);
   line-height: 1;
   text-decoration: none;
   font-weight: bold;
@@ -133,7 +135,6 @@ $h3_color: $color3;
   @include bar_inner_base;
   @include background($grad1);
   color: $color2;
-  font-size: 16px;
   border: 1px solid #e1e1e1;
   overflow:hidden;
   @include display-box;
@@ -154,7 +155,6 @@ $h3_color: $color3;
   @include background($grad5);
   border: 1px solid #e1e1e1;
   color: $color2;
-  font-size: 13px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -164,7 +164,6 @@ $h3_color: $color3;
   @include background($grad3);
   margin: 0 -10px; 
   border: 1px solid #777;
-  font-size: 16px;
   font-weight: bold;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0,0,0,.5);
@@ -188,7 +187,6 @@ $h3_color: $color3;
 @mixin bar6 {
   @include bar_inner_base;
   color: $color2;
-  font-size: 16px;
   padding: 10px;
   overflow: hidden;
   @include display-box;
