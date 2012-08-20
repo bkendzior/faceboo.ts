@@ -15,7 +15,7 @@
 #     2. logs a useful tritium message
 #     3. ?? Imports $page_name file (Not supported yet)
 
-@func Text.log_page(Text %page_name, Text %curr_file) {
+@func XMLNode.log_page(Text %page_name, Text %curr_file) {
   $page_name = %page_name
 
   log("--> Importing " + $page_name + " in " + $curr_file)
