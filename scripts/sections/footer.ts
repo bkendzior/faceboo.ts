@@ -1,6 +1,6 @@
 $("./body//div[@id='container']"){
   $("./div[@id='footer']") {
-    add_class("mw_footer")
+    add_class("mw-footer")
     
     move_here("../div[contains(@class,'center')]", "bottom")
     move_here("../div[@class='legalNote']", "bottom")
@@ -8,13 +8,13 @@ $("./body//div[@id='container']"){
 
     // Sign Up For Email Specials
     // -- had to hardcode it because link doesn't appear on cart pages etc...
-    insert_bottom("a", class:"mw_email_special", href:'/account/personaldetails/newsletter', "Sign Up For Email Specials")
+    insert_bottom("a", class:"mw-email_special", href:'/account/personaldetails/newsletter', "Sign Up For Email Specials")
 
     // Customer Services
-    insert_bottom("a", class:"mw_customer_service mw_h3", "Customer services")
+    insert_bottom("a", class:"mw-customer_service mw-h3", "Customer services")
     
     // My Account | My favourites | Shipping & returns
-    insert_bottom("div", class:"mw_acc_footer_bar") {
+    insert_bottom("div", class:"mw-acc_footer_bar") {
       // My Account
       move_here("ancestor::div[@id='footer']/div[@class='footer-links']/ul/li/a[contains(text(),'Edit Your Account Details')]") {
         text() {
@@ -38,7 +38,7 @@ $("./body//div[@id='container']"){
     }
 
     // Contact us | Site feedback | FAQ's
-    insert_bottom("div", class:"mw_contact_footer_bar") {
+    insert_bottom("div", class:"mw-contact_footer_bar") {
       // Contact us 
       move_here("ancestor::div[@id='footer']/div[@class='footer-links']/ul/li/a[contains(text(),'Contact Us')]") {
         text() {
@@ -48,7 +48,7 @@ $("./body//div[@id='container']"){
 
       // Site feedback 
       // -- had to hardcode it because link doesn't appear on cart pages etc...
-      insert_bottom("a", class:"mw_site_feedback", href:'/account/personaldetails/newsletter', "Site feedback")
+      insert_bottom("a", class:"mw-site_feedback", href:'/account/personaldetails/newsletter', "Site feedback")
 
 
       // FAQ's
@@ -67,23 +67,24 @@ $("./body//div[@id='container']"){
     $("./div[@class='legalNote']") {
       name("a")
 
+
+      // Regex to extract the parts of the desktop footer that we want to keep
       text() {
         replace(/^(.*HollandAndBarrett.*|.*Registered.*)$/, "")
         replace(/All\srights\sreserved\./,"") 
         replace(/\s\s/,"")
       }
 
-      wrap("div", class:'mw_copyright') {
-        insert_bottom("a", class:"mw_rights", "All rights reserved.")
+      wrap("div", class:'mw-copyright') {
+        insert_bottom("a", class:"mw-rights", "All rights reserved.")
         move_to("..", "bottom")
       }
 
     }
 
-    // Remove everything that isn't prefixed with mw_
-    $("./*[not(contains(@class,'mw_'))]") {
+    // Remove everything that isn't prefixed with mw-
+    $("./*[not(contains(@class,'mw-'))]") {
       remove()
     }
-
   }
 }

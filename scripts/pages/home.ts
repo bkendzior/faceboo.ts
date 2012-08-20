@@ -9,5 +9,6 @@ log("-")
 log("HOME!")
 
 $(".//div[@id='main']") {
-  remove()
+  #remove()
+  attributes(style:"background-color: orange;")
 }

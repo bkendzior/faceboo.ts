@@ -1,5 +1,54 @@
-.mw_header {
+.mw-header {
   border-bottom: 1px $color3 solid;
   padding: 10px;
   margin-bottom: 10px; 
+
+  color: black;
+
+  .mw-top_header {
+    text-align: center;
+    height: 20px;
+    
+    .mw-phone_number {
+      display: inline-block; 
+      float: left;
+
+      .icons-phone {
+      
+      }
+
+      a {
+        color: $gray2; 
+      } 
+    }
+
+    .mw-basket {
+      display: inline-block; 
+      float: right;
+
+      .icons-basket {
+      
+      }
+
+      span {
+        color: $gray2; 
+      } 
+    }
+  }
+
+  .mw-find_a_store {
+    text-align: center;
+    margin: 10px 0;
+    padding: 5px;
+    @extend .mw_btn1;
+
+    .mw-find_label {
+      text-transform: uppercase;
+      font-weight: normal;
+      letter-spacing: 0.1em;
+      color: #666;
+      font-size: 13px;
+    }
+  } 
+
 }
