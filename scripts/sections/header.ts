@@ -46,10 +46,34 @@ $("./body//div[@id='container']"){
       }
     }
 
-    insert_bottom("a", class:'mw-browse_store', "Browse the store", href:'www.google.com') {
-      add_class("mw_bar3")
-      // TODO: Arrow Icon
+    // Browse the Store
+    insert_bottom("div", class:"mw-browse") {
+      attributes(data-ur-set:"toggler")
+      
+      // Browse toggler button
+      insert_bottom("a", class:'mw-browse_button', "Browse the store") {
+        add_class("mw_bar3")
+        attributes(data-ur-toggler-component:"button", data-ur-state:"disabled")
+        // TODO: Arrow Icon
+      }
+      
+      insert_bottom("div", class:'mw-browse_contents') {
+        attributes(data-ur-toggler-component:"content", data-ur-state:"disabled")
+        //Vitamin Supplements
+        move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-multivits']")
+        //Food & drink
+        move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-food']")
+        //Sports nutrition
+        move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-bodybuild']")
+        //Weight loss
+        move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-diet']")
+        //Toileteries
+        move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-toilet']")
+        //Offers
+        move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-pom']")
+      }
     }
+    
 
     // Remove everything that isn't prefixed with mw-
     $("./*[not(contains(@class,'mw-'))]") {

@@ -39,6 +39,8 @@ $border1: 1px solid $color3;
 $border2: 1px dotted $color3;
 $border3: 1px solid #aaa; // border around buttons or boxes
 
+$mw_border_radius: 3px;
+
 // Font sizes
 $font_size: 13px;
 $emp_size: 11px;
@@ -107,6 +109,14 @@ $h3_color: $color3;
   text-decoration: none;
   font-weight: bold;
   padding: 10px;
+  
+  &[data-ur-state="disabled"] > div:last-of-type {
+    @extend .icons-plus;
+  }
+
+  &[data-ur-state="enabled"] > div:last-of-type {
+    @extend .icons-minus;
+  }
 }
 
 // title bars
@@ -128,14 +138,6 @@ $h3_color: $color3;
   overflow:hidden;
   @include display-box;
   @include box-sizing(border-box);
-
-  &[data-ur-state="disabled"] > div:last-of-type {
-    @extend .icons-plus;
-  }
-
-  &[data-ur-state="enabled"] > div:last-of-type {
-    @extend .icons-minus;
-  }
 
   div:first-of-type {
     @include box-flex(1);

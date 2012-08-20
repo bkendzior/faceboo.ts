@@ -147,7 +147,8 @@ match($status) {
       // Ex: '/pages/categories.asp'
       // Ex: '/pages/categories.asp?cid=5&linkpos=row2&MCat=1'
       with (/\/pages\/categories.asp/) {
-      
+        log_page('pages/browse/browse.ts', $curr_file)
+        @import  'pages/browse/browse.ts'
       }
 
       // Category Pages

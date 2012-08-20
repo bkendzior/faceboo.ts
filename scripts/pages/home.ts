@@ -1,14 +1,7 @@
 # Place holder/example file
+$("./body") {
+  add_class("mw-main")
+  $(".//div[@id='main']") {
 
-log("-")
-log("-")
-log("-")
-log("-")
-log("-")
-log("-")
-log("HOME!")
-
-$(".//div[@id='main']") {
-  #remove()
-  attributes(style:"background-color: orange;")
+  }
 }
