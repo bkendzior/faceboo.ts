@@ -2,5 +2,5 @@
 	"host_map": [
 	  "$.hollandandbarrett.com => www.hollandandbarrett.com"
 	],
-  "compass" : true
+  "compass": true
 }
