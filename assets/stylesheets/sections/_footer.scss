@@ -29,7 +29,8 @@
     > a {
       display: block;
       text-align: center;
-      font-size: $emp_size;
+      @include adjust-font-size-to($emp_size);
+      // font-size: $emp_size;
       color: $gray2;
       text-shadow: 0 1px 0 #fff;
     }
