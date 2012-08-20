@@ -244,64 +244,6 @@
   }
 }
 
-######################
-### Uranium Functions
-######################
-
-@func XMLNode.ur_attribute(Text %attr_modifier, Text %value) {
-  attribute(concat("data-ur-", %attr_modifier), %value)
-}
-
-@func XMLNode.ur_set(Text %type) {
-  ur_attribute("set", %type)
-}
-
-
-@func XMLNode.ur_component(Text %widget_type, Text %component_type) {
-  ur_attribute(concat(%widget_type, "-component"), %component_type)
-}
-
-@func XMLNode.ur_toggler(Text %button, Text %content) {
-  ur_set("toggler")
-  $(%button) {
-    ur_component("toggler", "button")
-    ur_attribute("state", "disabled")
-  }
-  $(%content) {
-    ur_component("toggler", "content")
-    ur_attribute("state", "disabled")
-  }
-}
-
-
-@func XMLNode.ur_carousel(Text %items) {
-  ur_set("carousel")
-  ur_component("carousel", "view_container")
-  ur_attribute("autoscroll", "true")
-  ur_attribute("touch", "disabled")
-  ur_attribute("data-ur-autoscroll-delay", "2")
-  insert_bottom("div") {
-    ur_component("carousel", "scroll_container")
-    copy_here(%items, "bottom") {
-      ur_component("carousel", "item")
-    }
-  }
-  insert_bottom("div", "Prev") {
-    ur_component("carousel", "button")
-    ur_attribute("carousel-button-type", "prev")
-  }
-  insert_bottom("div", "Next") {
-    ur_component("carousel", "button")
-    ur_attribute("carousel-button-type", "next")
-  }
-  insert_bottom("div", "-- count --") {
-    ur_component("carousel","count")
-  }
-  insert_bottom("div", class: "mw_dots") {
-    ur_component("carousel", "dots")
-  }
-}
-
 # This function lateloads all images and moves scripts to the bottom of the body, place function at end of html.ts
 @func XMLNode.lateload() {
   $(".//script") {
