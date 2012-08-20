@@ -3,8 +3,9 @@
   :input_directory: main
   :input_files:
   - http://d1topzp4nao5hp.cloudfront.net/uranium-upload/0.1.102/uranium-pretty.js
-  - http://d1topzp4nao5hp.cloudfront.net/plutonium-upload/0.1.60/auto_scroll.js
-  - http://d1topzp4nao5hp.cloudfront.net/plutonium-upload/0.1.60/desktop_link.js
-  - http://d1topzp4nao5hp.cloudfront.net/plutonium-upload/0.1.60/gsub.js
-  - http://d1topzp4nao5hp.cloudfront.net/plutonium-upload/0.1.60/passthrough_ajax.js
-  - http://d1topzp4nao5hp.cloudfront.net/plutonium-upload/0.1.60/mw_analytics.js
+  - http://d1topzp4nao5hp.cloudfront.net/plutonium-upload/0.1.66/auto_scroll.js
+  - host_map.js
+  - http://d1topzp4nao5hp.cloudfront.net/plutonium-upload/0.1.66/desktop_link.js
+  - http://d1topzp4nao5hp.cloudfront.net/plutonium-upload/0.1.66/gsub.js
+  - http://d1topzp4nao5hp.cloudfront.net/plutonium-upload/0.1.66/passthrough_ajax.js
+  - http://d1topzp4nao5hp.cloudfront.net/plutonium-upload/0.1.66/mw_analytics.js
