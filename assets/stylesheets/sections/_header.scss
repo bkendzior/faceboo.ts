@@ -55,6 +55,14 @@
 
     form {
       height: 30px; 
+      
+        &::after {
+          @extend .icons-search;
+          content: '';
+          position: absolute;
+          top: 7px;
+          left: 5px;
+        }
     }
 
     #header-search-bar {
@@ -72,6 +80,8 @@
         // Padding for search icons
         padding-left: 20px;
         color: $gray2;
+
+        
       }
     }
     

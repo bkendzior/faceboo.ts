@@ -3,7 +3,7 @@
     #######################################  */
 
 // Set the spacing to be 10px apart (remove for no spacing)
-$icons-spacing: 10px;
+$icons-spacing: 15px;
 
 // Change the location of an icon in your sprite
 // Format is $foldername-iconname-position (example below)
@@ -13,12 +13,14 @@ $icons-spacing: 10px;
 // this is for Compass 0.12 (require)
 // this is for at least Manhattan v.3.4.136
 
-// @import "icons/*.png";
-// @include all-icons-sprites;
- 
-// @import "retina";
+@import "icons/*.png"; /**/
+@include all-icons-sprites;
+
+$all-icons-sprites: browsearrow envelope fb grid1 grid2 list1 list2 pin search sort twitter;
+
+@import "_retina.scss";
 // if all the images in your icons/ folder are retina size:
-// @include retina-sprites(-sprites);
+@include all-retina-sprites($icons-sprites, $all-icons-sprites);
  
 // if only some of the images are retina size and they have a filename convention ex. x2-a.png, x2-b.png, x2-c.png
 // @include retina-sprites(-sprites, sprite-names(sprite-map("icons/x2-*.png")));
@@ -41,3 +43,58 @@ $icons-spacing: 10px;
 //   height: 19px;
 //   display: inline-block;
 // }
+
+.icons-browsearrow {
+  width: 14px;
+  height: 13px;
+}
+
+.icons-envelope {
+  width: 24px;
+  height: 16px;
+}
+
+.icons-fb {
+  width: 24px;
+  height: 24px;
+}
+
+.icons-grid1 {
+  width: 26px;
+  height: 26px;
+}
+
+.icons-grid2 {
+  width: 26px;
+  height: 26px;
+}
+
+.icons-list1{
+  width: 26px;
+  height: 26px;
+}
+
+.icons-list2 {
+  width: 26px;
+  height: 26px;
+}
+
+.icons-pin {
+  width: 12px;
+  height: 20px;
+}
+
+.icons-search {
+  width: 16px;
+  height: 16px;
+}
+
+.icons-sort {
+  width: 14px;
+  height: 10px;
+}
+
+.icons-twitter {
+  width: 24px;
+  height: 24px;
+}
