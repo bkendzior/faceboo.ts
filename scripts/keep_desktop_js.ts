@@ -13,5 +13,5 @@ match($page_name) {
 // ----------------
 // Uncomment to keep all site scripts
 $("/html//script") {
-  attribute("data-keep","true")
+  #attribute("data-keep","true")
 }

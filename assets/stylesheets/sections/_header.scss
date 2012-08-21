@@ -8,6 +8,7 @@
     .mw-phone_number {
       display: inline-block; 
       float: left;
+      font-weight: bold;
 
       .icons-phone {
       
@@ -21,6 +22,7 @@
     .mw-basket {
       display: inline-block; 
       float: right;
+      font-weight: bold;
 
       .icons-basket {
       
@@ -43,7 +45,6 @@
       font-weight: normal;
       letter-spacing:0.1em;
       color: #666;
-      font-size: 13px;
     }
   }
 
@@ -70,7 +71,6 @@
 
         // Padding for search icons
         padding-left: 20px;
-        font-size: 13px;
         color: $gray2;
       }
     }
@@ -89,7 +89,6 @@
 
         text-transform: uppercase;
         color: #666;
-        font-size: 13px;
       }
     }
   }
