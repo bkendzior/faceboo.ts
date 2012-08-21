@@ -1,5 +1,101 @@
-// Every page should have a class on the body
-// Scope that in each file at the start
 .mw-home {
-  
+
+  #main {
+    padding: 0 10px;
+  }
+
+  .mw-rewards {
+    .mw-rewards_body {
+      @include adjust-font-size-to($h2-size);
+      color: $gray1;
+      padding: 0 10px;
+      div {
+        a {
+          // VERTICAL RHYTHM STUFF NOT WORKING!
+          font-size: 13px !important;
+          // VERTICAL RHYTHM STUFF NOT WORKING!
+          //@include adjust-font-size-to($base-font-size);
+          color: $green;
+          font-weight: bold;
+
+          &:first-of-type {
+            &::after {
+              padding: 10px;
+              content: '|';
+            }
+          } 
+        }
+      }
+    }
+  }
+  .mw-qualified {
+    @include leader(1);
+    @include trailer(1);
+    .mw-qualified_body {
+      color: $gray1;
+      padding: 0 10px;
+      @include padding-leader(.5);
+      @include padding-trailer(.5);
+      
+      div {
+        a {
+          // VERTICAL RHYTHM STUFF NOT WORKING!
+          font-size: 13px !important;
+          // VERTICAL RHYTHM STUFF NOT WORKING!
+          color: $green;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .mw-email_offer {
+    color: $gray1;
+    position: relative;
+    padding-left: 27px;
+    padding-top: 4px;
+    font-weight: bold;
+    margin: 10px;
+    @include leader(1);
+      
+    &::before {
+      @extend .icons-envelope;
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+  }
+
+  .mw-social_share {
+    @include box-sizing(content-box);
+   
+    font-weight: bold;
+    position: relative;
+    height: 24px;
+    padding: 10px;
+   
+    a {
+      color: $gray1;
+      position: relative;
+      padding-left: 27px;
+      padding-top: 4px;
+      
+      &::before {
+        @extend .icons-twitter;
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+    }
+
+    .mw-social_twitter {
+      float: right;
+    }
+    
+    .mw-social_facebook {
+       float: left;
+    }
+  }
 }

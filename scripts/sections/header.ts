@@ -25,7 +25,7 @@ $("./body//div[@id='container']"){
       $find_store = fetch("@href")
     }
     insert_bottom("a", class:"mw-find_a_store", href:$find_store) {
-      insert("span", class:"mw-find_icon icons-find") 
+    //insert("span", class:"mw-find_icon icons-pin") 
       insert("span", class:"mw-find_label", "Find A Store") 
     }
 
