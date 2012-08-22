@@ -18,30 +18,39 @@ $("./body") {
 
 
     $(".//div[@id='page-content']") {
-
+    
       $("./a[contains(@name,'anchor_')]") {
         name("div")
+        insert_bottom("div", class:'mw-category_contents')
       }
-      
-      $("./div[contains(@name,'anchor_')]") {
-        //log(fetch("@name"))
-        //log(concat("following-sibling::div[@class='category' and count(preceding::a[contains(@name,'anchor_')]) = ", index() , "]"))
-        
-        move_here(concat("following-sibling::div[@class='category' and count(preceding::div[contains(@name,'anchor_')]) = ", index() , "]"), "bottom") 
-      }
-
-      $("./a[@class='top-of-page-link']") {
-        #remove()
-      }
-
-
       // Fix for 'seeds' being in a strong
       $("./div/strong/a") {
-        #move_to("../..")
+        move_to("../..")
       }
 
-      $("./div/a") {
-        #add_class("mw_bar1")
+      $("./div[@class='category']/a") {
+        move_to("../preceding-sibling::div[contains(@name,'anchor_')]/div[@class='mw-category_contents']", "bottom")
+      }
+
+      $("./div[contains(@name,'anchor_')]") {
+        attributes(data-ur-set:"toggler")
+      
+        $("./div[@class='category-heading']") {
+          attributes(data-ur-toggler-component:"button", data-ur-state:"disabled")
+          add_class("mw_bar1")
+          insert("div", class:"mw_arrow")
+        }
+
+        $("./div[@class='mw-category_contents']") {
+          attributes(data-ur-toggler-component:"content", data-ur-state:"disabled")
+          $("./*") {
+            add_class("mw_bar1")
+          }
+        }
+      }
+
+      $("./a[@class='top-of-page-link'] | ./div[@id='mini-tabs'] | ./ul | /div[@id='mini-tabs']") {
+        remove()
       }
     }
 
