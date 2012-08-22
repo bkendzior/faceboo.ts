@@ -45,7 +45,7 @@ $mw_border_radius: 3px;
 $base-font-size: 13px;
 $base-line-height: 18px;
 @include establish-baseline($base-font-size);
-//$relative-font-sizing: false;
+$relative-font-sizing: false;
 $emp_size: 11px;
 
 $h1_size: 22px;
@@ -114,11 +114,19 @@ $h3_color: $color3;
   padding: 10px;
   
   &[data-ur-state="disabled"] > div:last-of-type {
-    @extend .icons-plus;
+    @extend .icons-browsearrow_down;
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: -12px;
   }
 
   &[data-ur-state="enabled"] > div:last-of-type {
-    @extend .icons-minus;
+    @extend .icons-browsearrow_right;
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: -15px;
   }
 }
 

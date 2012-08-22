@@ -55,6 +55,7 @@ $("./body//div[@id='container']"){
         add_class("mw_bar3")
         attributes(data-ur-toggler-component:"button", data-ur-state:"disabled")
         // TODO: Arrow Icon
+        insert_bottom("div", class:"mw-arrow")
       }
       
       insert_bottom("div", class:'mw-browse_contents') {

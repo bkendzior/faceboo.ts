@@ -140,22 +140,25 @@ match($status) {
       // PDP Pages
       // Ex: '/pages/product_detail.asp?pid=881&prodid=640&cid=54'
       with (/\/pages\/product_detail.asp/) {
-      
+        log_page('pages/browse/product.ts', $curr_file)
+        @import  'pages/browse/product.ts'
       }
 
-      // Browse Pages
-      // Ex: '/pages/categories.asp'
+      // Image Category Pages
       // Ex: '/pages/categories.asp?cid=5&linkpos=row2&MCat=1'
-      with (/\/pages\/categories.asp/) {
-        log_page('pages/browse/browse.ts', $curr_file)
-        @import  'pages/browse/browse.ts'
+      with (/\/pages\/categories.asp.*MCat\=1/) {
+        log_page('pages/browse/category_image.ts', $curr_file)
+        @import  'pages/browse/category_image.ts'
       }
 
-      // Category Pages
+      // Text Category Pages
+      // Ex: '/pages/categories.asp'
       // Ex: '/pages/goshopping.asp'
       // Ex: '/pages/goshopping.asp?MCatID=5&MCat=1'
-      // Ex: '/pages/shop-by-brand.asp?linkpos=row1'
-
+      with (/\/pages\/goshopping.asp/) {
+        log_page('pages/browse/category_text.ts', $curr_file)
+        @import  'pages/browse/category_text.ts'
+      }
 
       // ---------------------------------------------
       // Page not mapped

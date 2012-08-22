@@ -1,7 +1,8 @@
-.mw-home {
+body.mw-home {
 
   #main {
-    padding: 0 10px;
+    @include leader(1);
+    padding: 0 5px;
   }
 
   .mw-rewards {
@@ -82,7 +83,6 @@
       padding-top: 4px;
       
       &::before {
-        @extend .icons-twitter;
         content: '';
         position: absolute;
         top: 0px;
@@ -92,10 +92,18 @@
 
     .mw-social_twitter {
       float: right;
+
+      &::before {
+        @extend .icons-twitter;
+      }
     }
     
     .mw-social_facebook {
-       float: left;
+      float: left;
+       
+      &::before {
+        @extend .icons-fb;
+      }
     }
   }
 }

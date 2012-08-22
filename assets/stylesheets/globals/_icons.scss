@@ -16,7 +16,7 @@ $icons-spacing: 15px;
 @import "icons/*.png"; /**/
 @include all-icons-sprites;
 
-$all-icons-sprites: browsearrow envelope fb grid1 grid2 list1 list2 pin search sort twitter;
+$all-icons-sprites: browsearrow_down browsearrow_right envelope fb grid1 grid2 list1 list2 pin search sort twitter;
 
 @import "_retina.scss";
 // if all the images in your icons/ folder are retina size:
@@ -44,7 +44,12 @@ $all-icons-sprites: browsearrow envelope fb grid1 grid2 list1 list2 pin search s
 //   display: inline-block;
 // }
 
-.icons-browsearrow {
+.icons-browsearrow_right {
+  width: 13px;
+  height: 14px;
+}
+
+.icons-browsearrow_down {
   width: 14px;
   height: 13px;
 }
