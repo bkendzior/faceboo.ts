@@ -151,6 +151,13 @@ match($status) {
         @import  'pages/browse/category_image.ts'
       }
 
+      // Browse Pages
+      // Ex: '/pages/categories.asp?cid=39&linkpos=row2'
+      with (/\/pages\/categories.asp/) {
+        log_page('pages/browse/browse.ts', $curr_file)
+        @import  'pages/browse/browse.ts'
+      }
+
       // Text Category Pages
       // Ex: '/pages/categories.asp'
       // Ex: '/pages/goshopping.asp'
