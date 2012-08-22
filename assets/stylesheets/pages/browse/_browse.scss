@@ -6,4 +6,14 @@ body.mw-browse {
       padding-left: 5px;
     }
   }
+
+  .paging-button, .paging-button-current {
+    display: none;
+    &.visible {
+      display: inline-block;
+    }
+  }
+  .paging-view-all {
+    display: inline-block;
+  }
 }

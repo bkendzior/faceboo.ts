@@ -2,6 +2,14 @@
 ### Site Functions
 ####################
 
+
+
+@func XMLNode.remove_clearer() {
+  $("/html//div[@class='clearer']") {
+    remove()
+  }
+}
+
 # LOG PAGE
 # 
 #  logs the page name, and sets the $page_name variable for future use

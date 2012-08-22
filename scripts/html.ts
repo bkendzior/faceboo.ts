@@ -12,6 +12,8 @@ $("/html") {
   
   add_assets()
 
+  remove_clearer() // Removes clearer div
+
   @import sections/header.ts
   @import sections/footer.ts
 
