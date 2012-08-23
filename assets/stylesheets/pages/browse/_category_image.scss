@@ -1,3 +1,30 @@
-body.mw-image_category {
+body.mw-category_image {
+  #breadcrumb-left {
+    @include adjust-font-size-to(12px);
+    @include leader(.5);
 
+    > a {
+      padding: 0 10px;
+      display: inline-block;  
+    }
+    > div {
+      display: inline-block;  
+    }
+  }
+  
+  #main-banner {
+    @extend .mw_h2;
+  }
+
+
+  .clickbox, .bannerl > a, .bannerr >a {
+    display: block;
+    @extend .mw_bar1;
+    @include bar_chevron;
+
+    // adjust the chevron positioning
+    div {
+      top: -10px !important;
+    }
+  }
 }

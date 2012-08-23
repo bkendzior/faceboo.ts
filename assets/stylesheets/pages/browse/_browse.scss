@@ -9,6 +9,14 @@ body.mw-browse {
     @include leader(.5);
   }
 
+  .paging-info {
+    color: $gray2;
+    font-weight: bold;
+
+    
+  }
+
+  // Pagination
   .paging-bar {
     margin: 10px; 
 

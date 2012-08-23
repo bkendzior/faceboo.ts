@@ -54,7 +54,6 @@ body.mw-home {
     color: $gray1;
     position: relative;
     padding-left: 27px;
-    padding-top: 4px;
     font-weight: bold;
     margin: 10px;
     @include leader(1);
@@ -70,17 +69,19 @@ body.mw-home {
 
   .mw-social_share {
     @include box-sizing(content-box);
-   
+    @include leader(.5);
+    @include trailer(1);
+
     font-weight: bold;
     position: relative;
     height: 24px;
-    padding: 10px;
+    padding: 0 10px;
    
     a {
       color: $gray1;
       position: relative;
       padding-left: 27px;
-      padding-top: 4px;
+      @include leader(.5);
       
       &::before {
         content: '';
@@ -92,6 +93,7 @@ body.mw-home {
 
     .mw-social_twitter {
       float: right;
+      @include padding-leader(.25);
 
       &::before {
         @extend .icons-twitter;
@@ -100,7 +102,8 @@ body.mw-home {
     
     .mw-social_facebook {
       float: left;
-       
+      @include padding-leader(.25);
+
       &::before {
         @extend .icons-fb;
       }

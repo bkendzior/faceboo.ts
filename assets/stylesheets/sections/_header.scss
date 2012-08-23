@@ -61,7 +61,7 @@
   // Search Box
   .mw-search_box {
     @include box2;
-    margin-bottom: 10px;
+    @include trailer(.5);
 
     form {
       height: 30px; 
