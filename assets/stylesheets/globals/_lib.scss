@@ -13,7 +13,7 @@ $spacing:  10px;
 //colors
 $body_background: #fff;
 
-$color1: #5d257d; // purple
+$color1: #333; //grey 
 $color2: #3160aa; // blue
 $color3: #BBB; // grey
 $color4: #efefef; // light grey
@@ -54,7 +54,7 @@ $h3_size: 14px;
 
 // Font colors
 $h1_color: $color1;
-$h2_color: $color1;
+$h2_color: $green;
 $h3_color: $color3;
 
 
@@ -112,7 +112,28 @@ $h3_color: $color3;
   text-decoration: none;
   font-weight: bold;
   padding: 10px;
-  
+}
+
+
+@mixin bar_plus_minus {
+  &[data-ur-state="disabled"] > div:last-of-type {
+    @extend .icons-plus;
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: -16px;
+  }
+
+  &[data-ur-state="enabled"] > div:last-of-type {
+    @extend .icons-minus;
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: -15px;
+  }
+}
+
+@mixin bar_browsearrows {
   &[data-ur-state="disabled"] > div:last-of-type {
     @extend .icons-browsearrow_down;
     display: inline-block;
@@ -130,6 +151,16 @@ $h3_color: $color3;
   }
 }
 
+@mixin bar_chevron {
+  & > div:last-of-type {
+    @extend .icons-chevron;
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: 2px;
+  } 
+}
+
 // title bars
 @mixin tbar1 {
   @include bar_inner_base;
@@ -145,18 +176,11 @@ $h3_color: $color3;
   @include background($grad1);
   color: $color2;
   border: 1px solid #e1e1e1;
-  overflow:hidden;
-  @include display-box;
-  @include box-sizing(border-box);
 
   div:first-of-type {
     @include box-flex(1);
   }
 
-  div:last-of-type {
-    display: block;
-    margin-top: -2px;
-  }
 }
 
 @mixin bar2 {

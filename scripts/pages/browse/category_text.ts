@@ -16,9 +16,13 @@ $("./body") {
       }
     }
 
-
     $(".//div[@id='page-content']") {
-    
+
+      $("./h1") {
+        add_class("mw_h2") 
+        remove("./a")
+      }
+
       $("./a[contains(@name,'anchor_')]") {
         name("div")
         insert_bottom("div", class:'mw-category_contents')
@@ -45,6 +49,7 @@ $("./body") {
           attributes(data-ur-toggler-component:"content", data-ur-state:"disabled")
           $("./*") {
             add_class("mw_bar1")
+            insert_bottom("div", class:"mw-chevron")
           }
         }
       }
@@ -53,8 +58,6 @@ $("./body") {
         remove()
       }
     }
-
-
 
     // Remove the menu
     $("./div[@id='menu']") {

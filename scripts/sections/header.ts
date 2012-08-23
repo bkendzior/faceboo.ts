@@ -72,6 +72,10 @@ $("./body//div[@id='container']"){
         move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-toilet']")
         //Offers
         move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-pom']")
+
+        $("./a") {
+          insert_bottom("div", class:'mw-chevron')
+        }
       }
     }
     

@@ -5,15 +5,45 @@ body.mw-browse {
       display: inline-block;
       padding-left: 5px;
     }
+    @include adjust-font-size-to(12px);
+    @include leader(.5);
   }
 
-  .paging-button, .paging-button-current {
-    display: none;
-    &.visible {
+  .paging-bar {
+    margin: 10px; 
+
+    .page-number-row {
       display: inline-block;
+      float: right;
+
+      .paging-button, .paging-button-current {
+        // Hide other page numbers
+        > a {
+          display: none;
+        }
+        // Make prev & next buttons visible
+        &.visible {
+          display: inline-block;
+
+          > a {
+            @extend .mw_btn1;
+            padding: 10px;
+          }
+        }
+        // Make current page visible
+        &.visible-current {
+          display: inline-block;
+          padding: 10px;
+        }
+      }
     }
-  }
-  .paging-view-all {
-    display: inline-block;
+    // View all and View pages buttons
+    .paging-view-all, .paging-page-view {
+      display: inline-block;
+      >a {
+        @extend .mw_btn1;
+        padding: 10px;
+      }
+    }
   }
 }

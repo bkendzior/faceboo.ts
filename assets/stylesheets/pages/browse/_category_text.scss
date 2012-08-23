@@ -1,3 +1,18 @@
 body.mw-category_text {
 
+  #breadcrumb-text {
+    @include adjust-font-size-to(12px);
+    @include leader(.5);
+
+    padding: 0 10px;
+  }
+
+  .category-heading {
+    @include bar_plus_minus;
+  }
+
+  .mw-category_contents > a  {
+    padding-left: 20px;
+    @include bar_chevron;
+   }
 }

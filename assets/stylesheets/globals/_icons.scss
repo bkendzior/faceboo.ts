@@ -16,7 +16,7 @@ $icons-spacing: 15px;
 @import "icons/*.png"; /**/
 @include all-icons-sprites;
 
-$all-icons-sprites: browsearrow_down browsearrow_right envelope fb grid1 grid2 list1 list2 pin search sort twitter;
+$all-icons-sprites: browsearrow_down browsearrow_right chevron_white chevron downarrow envelope fb grid1 grid2 list1 list2 minus plus pin search smalldownarrow smalluparrow sort twitter;
 
 @import "_retina.scss";
 // if all the images in your icons/ folder are retina size:
@@ -102,4 +102,39 @@ $all-icons-sprites: browsearrow_down browsearrow_right envelope fb grid1 grid2 l
 .icons-twitter {
   width: 24px;
   height: 24px;
+}
+
+.icons-chevron {
+  width: 7px;
+  height: 11px;
+}
+
+.icons-chevron_white {
+  width: 7px;
+  height: 11px;
+}
+
+.icons-downarrow {
+  width: 14px;
+  height: 9px;
+}
+
+.icons-plus {
+  width: 18px;
+  height: 18px;
+}
+
+.icons-minus {
+  width: 18px;
+  height: 18px;
+}
+
+.icons-smalluparrow {
+  width: 7px;
+  height: 4px;
+}
+
+.icons-smalldownarrow {
+  width: 7px;
+  height: 4px;
 }

@@ -110,13 +110,14 @@
 
   // Browse The Store
   .mw-browse {
-    .mw-browse_header {
-    
+    .mw-browse_button {
+      @include bar_browsearrows; 
     }
     .mw-browse_contents {
     
       a {
         @extend .mw_bar1;
+        @include bar_chevron;
         margin: 0 -10px; 
       }
     } 

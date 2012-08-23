@@ -22,51 +22,78 @@ $("./body") {
 
     // Page Content
     $("./div[@id='content']//div[@class='page-content']") {
+      // Remove sort bar from bottom 
       $("./div[@class='paging-bar-top'][2]") {
         remove()
       }
+      // Remove pagination from top 
       $("./div[@class='paging-bar'][1]") {
         remove()
       }
+      // Move the title, remove the top image and description
+      $("./div[@id='page-top-box-cat']") {
+        $("./div[@id='page-title-cat']") {
+          move_to("ancestor::div[@class='page-content']", "top")
+          add_class("mw_h2")
+        }
+        remove()
+      }
 
+      $("./div[contains(@class,'paging-bar-top')]") {
+        $("./div[contains(@class, 'paging-info')]") {
+          text() {
+            replace(/.*\s(\d+\sproducts).*/,"\\1")
+            
+          }
+        }
+      }
+      
+      $("./div[@class='grid_container']") {
+        $(".//*") {
+          attribute("style","")
+        }
+      }
 
       // Pagination (Bottom)
       $("./div[@class='paging-bar']") {
         $("./div[contains(@class,'page-number-row')]") {
-          // Middle Number is selected
           $("./div[@class='paging-button-current']") {
-            add_class("visible")
+            add_class("visible-current")
+            text() {
+              prepend("Page ")  
+            }
+            // Next
             $("following-sibling::div[@class='paging-button'][1]") {
-              add_class("visible")
+              add_class("visible next")
+              $("./a") {
+                text() {
+                  prepend("Page ")  
+                  append(" »")
+                }
+              }
             }
+            // Previous
             $("preceding-sibling::div[@class='paging-button'][1]") {
-              add_class("visible")
-            }
-          }
-          // First number is selected
-          $("./div[contains(@class,'paging-button-current') and position()=1]") {
-            $("following-sibling::div[contains(@class,'paging-button')][2]") {
-              add_class("visible")
-            }
-          }
-          // Last number is selected
-          $("./div[contains(@class,'paging-button-current') and position()=last()]") {
-            $("preceding-sibling::div[contains(@class,'paging-button')][2]") {
-              add_class("visible")
+              add_class("visible previous")
+              $("./a") {
+                text() {
+                  prepend("« Page ")  
+                }
+              }
             }
           }
         }
 
         // View All Button
-        $("./div[@class='paging-next-bar']/div[contains(@class,'paging-view-all')]") {
+        $("./div[@class='paging-next-bar']/div[contains(@class,'paging-view-all') or contains(@class,'paging-page-view')]") {
           move_to("../..", "top")
         }
 
         $("./div[@class='paging-next-bar'] | div[@class='paging-previous-bar']") {
           remove()
         }
-      }
-    }
+      } // End Pagination
+    } // End Page Content
 
 
     // Remove the menu
