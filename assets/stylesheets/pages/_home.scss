@@ -2,7 +2,7 @@ body.mw-home {
 
   #main {
     @include leader(1);
-    padding: 0 5px;
+    padding: 0 10px;
   }
 
   .mw-rewards {
@@ -12,10 +12,7 @@ body.mw-home {
       padding: 0 10px;
       div {
         a {
-          // VERTICAL RHYTHM STUFF NOT WORKING!
-          font-size: 13px !important;
-          // VERTICAL RHYTHM STUFF NOT WORKING!
-          //@include adjust-font-size-to($base-font-size);
+          font-size: 13px;
           color: $green;
           font-weight: bold;
 
@@ -40,9 +37,7 @@ body.mw-home {
       
       div {
         a {
-          // VERTICAL RHYTHM STUFF NOT WORKING!
-          font-size: 13px !important;
-          // VERTICAL RHYTHM STUFF NOT WORKING!
+          font-size: 13px;
           color: $green;
           font-weight: bold;
         }

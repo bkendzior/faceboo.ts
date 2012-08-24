@@ -44,8 +44,8 @@ $mw_border_radius: 3px;
 // Font sizes
 $base-font-size: 13px;
 $base-line-height: 18px;
-@include establish-baseline($base-font-size);
 $relative-font-sizing: false;
+@include establish-baseline($base-font-size);
 $emp_size: 11px;
 
 $h1_size: 22px;

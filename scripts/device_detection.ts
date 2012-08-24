@@ -1,5 +1,6 @@
 
 $device_stylesheet = "main"
+
 match($user_agent) {
   with(/Android/) {
     $device_stylesheet="devices/android"

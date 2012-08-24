@@ -34,21 +34,56 @@ $("./body") {
       $("./div[@id='page-top-box-cat']") {
         $("./div[@id='page-title-cat']") {
           move_to("ancestor::div[@class='page-content']", "top")
-          add_class("mw_h2")
+          add_class("mw_h1")
         }
         remove()
       }
 
       $("./div[contains(@class,'paging-bar-top')]") {
+        // Sort By Bar
+        $("./div[contains(@class,'paging-sortby')]") {
+          add_class("mw-sortby")
+          move_to("..",'top')
+
+          $(".//form") {
+            $("./select") {
+              $("./option") {
+                text() {
+                  prepend("Sort By: ")
+                }
+              }
+            }
+          }
+        }
+
+        // # of products
         $("./div[contains(@class, 'paging-info')]") {
           text() {
             replace(/.*\s(\d+\sproducts).*/,"\\1")
-            
+          }
+          wrap("div", class:"mw-list_grid") {
+            insert_top("div",id:"mw-grid_view")
+            insert_top("div",id:"mw-list_view")
           }
         }
       }
-      
+
+      // Product List
       $("./div[@class='grid_container']") {
+        attributes(id:"mw_main_item_wrapper")
+        $("./div[contains(@class,'grid_box_')]") {
+          $("./div[@class='grid_box_review']") {
+             $("./a") {
+              $review_link = fetch("@href")
+              remove()
+            }
+
+            attribute("href",$review_link)
+            move_to("../div[@class='grid_box_name']", "after")
+          }
+        }
+        
+        // Remove styles from ALL the elements
         $(".//*") {
           attribute("style","")
         }
