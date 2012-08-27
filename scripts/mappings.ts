@@ -167,6 +167,13 @@ match($status) {
         @import  'pages/browse/category_text.ts'
       }
 
+      // Search - No Matches
+      // Ex: '/pages/iq.asp?SearchText=vinp'
+      with (/iq\.asp\?SearchText/) {
+        log_page('pages/browse/category_text.ts', $curr_file)
+        @import  'pages/browse/category_text.ts'
+      }
+
       // ---------------------------------------------
       // Page not mapped
       //

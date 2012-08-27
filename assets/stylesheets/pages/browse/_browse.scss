@@ -107,6 +107,10 @@ body.mw-browse {
 
       .grid_box_image {
         display: block;
+        
+        img {
+          padding: 10px;
+        }
 
         .grid_cust_fav {
           display: none;
@@ -115,10 +119,14 @@ body.mw-browse {
       .grid_box_name{
         display: block;
         background-color: #ededed;
+        a {
+          color: #333;
+        }
         @include box-shadow(0 -1px 0 #ddd, inset 0 1px 0 #fff);
       }
-      .grid_box_price{
+      .grid_box_gprice{
         display: block;
+        font-weight: bold;
         background-color: #ededed;
       }
     }
@@ -140,7 +148,12 @@ body.mw-browse {
         .grid_box_image {
           float: left;
           > a > img {
-            height: 100px;
+            height: 120px;
+            width: auto;
+          }
+
+          .grid_cust_fav {
+            display: none;
           }
         }
 
@@ -148,11 +161,46 @@ body.mw-browse {
           text-align: right;
         }
         
-        .grid_box_name > p > a {
-          color: $red1;
+        .grid_box_name { 
+          margin-bottom: 20px;
+          
+          > p > a {
+            color: $red1;
+            font-size: $h2_size;
+            font-weight: bold;
+          }
+        }
+        
+        .grid_box_size {
+          @include adjust-font-size-to($base-font-size);
+          color: $gray1;
+        }
+        .grid_box_gprice{
+          display: none;
+        }
+        .grid_box_price {
           @include adjust-font-size-to($h2-size);
           font-weight: bold;
-        } 
+          color: $red2;
+        }
+
+        .grid_box_save {
+          @include adjust-font-size-to($base-font-size);
+          .twofor {
+            color: black;
+            font-weight: bold;
+          }
+
+          .message {
+            color: $red1;
+            margin:10px 0;
+          }
+        }
+
+        .grid_box_review {
+          margin-bottom: 10px;
+          margin-top: -10px;
+        }
 
         .grid_box_buttons > *{
           display: inline-block;

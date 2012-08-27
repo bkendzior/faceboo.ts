@@ -72,6 +72,17 @@ $("./body") {
       $("./div[@class='grid_container']") {
         attributes(id:"mw_main_item_wrapper")
         $("./div[contains(@class,'grid_box_')]") {
+          $("./div[@class='grid_box_price']") {
+            copy_to("..") {
+              attribute("class", "grid_box_gprice")
+              text() {
+                replace(/Now:\s/,"")
+              }
+            }
+          }
+
+
+          // Review Stars
           $("./div[@class='grid_box_review']") {
              $("./a") {
               $review_link = fetch("@href")

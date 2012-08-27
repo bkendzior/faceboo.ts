@@ -37,11 +37,18 @@
       color: $gray2;
       text-shadow: 0 1px 0 #fff;
     }
+    // Powered by Moovweb
+    .mw-powered_by_moovweb {
+      @include leader(0.5);
+      color: $green;
+      text-align: center;
+      font-size: 11px;
+    }
   }
 
   // My Account | My favourites | Shipping & returns
   // Contact us | Site feedback | FAQ's
-  .mw-acc_footer_bar, .mw-contact_footer_bar {
+  .mw-acc_footer_bar, .mw-contact_footer_bar{
     display: block;
     text-align: center;
     font-weight: bold;
@@ -55,4 +62,5 @@
       }
     }
   }
+
 }
