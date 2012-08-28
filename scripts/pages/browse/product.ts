@@ -51,6 +51,10 @@ $("./body") {
               }
             }
 
+            $("./a") {
+              move_to("../p[@id='info-main-prod-buy-now']", "top")
+            }
+
             $("./p[@id='info-main-prod-buy-now']/a") {
               inject("ADD TO CART")
             }
@@ -113,6 +117,16 @@ $("./body") {
             add_class("mw-prod_num_label")
             move_to("ancestor::div[@class='mw-additional']/div[@class='mw-product_num_header']", "top")
           }
+          $(".//div[@class='button-row']") {
+            $("./div/a[1]") { 
+              add_class("mw-fav_button") 
+              inject("ADD TO FAVORITES")
+            }
+            $("./div/a[2]") {
+              add_class("mw-cart_button")
+              inject("ADD TO CART")
+            }
+          }
         }
       }
 
@@ -127,8 +141,8 @@ $("./body") {
             remove()
           }
 
-          inject("BUTTON1")
-
+          inject("Label Info")
+          insert("div")
         }  
         // Label Info Content
         $("./div[@id='tab-info']") {
@@ -139,12 +153,17 @@ $("./body") {
       // Reviews
       $(".//div[@id='BVRRContainer']") {
         attributes(data-ur-toggler-component:"content", data-ur-state:"disabled")
-        
+
+        $(".//*") {
+          attribute("style","")
+        }
+
         wrap("div", class:'mw-reviews_toggler') {
           attributes(data-ur-set:"toggler")
           insert_top("div", class:'mw-reviews_button') {
             attributes(data-ur-toggler-component:"button", data-ur-state:"disabled")
-            inject("BUTTON2")
+            inject("Reviews")
+            insert("div")
           }
         }  
       }

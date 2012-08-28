@@ -24,15 +24,16 @@ $gray2: #999;
 $green: #00693b;
 $red1: #7d0009;
 $red2: #970404;
+$blue: #2882BE;
 
 $error_color: #ee2a24;
 
 // gradients
 $grad1: linear-gradient(top, #fff 0%, #f2f2f2 100%);    // grey gradient
+$grad2: linear-gradient(top, #3BBEFF 0%, $blue 100%);    // white to blue
 $grad3: linear-gradient(bottom, #343435 0%, #535355 100%); // Dark Gray 
 $grad4: linear-gradient(bottom, #d1d1d1 0%, #fff 100%); // White to Gray 
 $grad5: linear-gradient(bottom, #097509 0%, #61b151 100%); //Green Gradient 
-$grad6: linear-gradient(top, #535188 0%, #706293 50%, #4d4079 50%, #7654ad 100%); //gradient for the countdown numbers
 
 // borders
 $border1: 1px solid $color3;
@@ -185,7 +186,7 @@ $h3_color: $color3;
 
 @mixin bar2 {
   @include bar_inner_base;
-  @include background($grad5);
+  @include background($grad3);
   border: 1px solid #e1e1e1;
   color: $color2;
   font-weight: bold;
@@ -299,6 +300,15 @@ $h3_color: $color3;
   color: #FFF;
 }
 
+@mixin btn4 {
+  @include background($grad2);
+  @include box-shadow(inset 0 1px 0 rgba(255,255,255,.3));
+  border: $border3;
+  border-radius: 3px;
+  text-shadow: 0 -1px 0px #104900;
+  color: #FFF;
+}
+
 .mw_btn1 {
   @include btn1;
 }
@@ -309,6 +319,10 @@ $h3_color: $color3;
 
 .mw_btn3 {
   @include btn3;
+}
+
+.mw_btn4 {
+  @include btn4;
 }
 // boxes
 

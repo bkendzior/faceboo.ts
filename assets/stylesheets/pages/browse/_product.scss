@@ -1,5 +1,4 @@
 body.mw-product {
-  display: none;
   #breadcrumb-left {
     * {
       display: inline-block;
@@ -147,7 +146,25 @@ body.mw-product {
         }
       }
       .button-row {
-        display: none;
+        margin: 10px;
+
+        .but-pad, .but-pad2 {
+          display: none;
+        }
+
+        .mw-fav_button {
+          @extend .mw_btn4; 
+          padding: 5px;
+          text-align: center;
+          > img { display: none; }
+        }
+        .mw-cart_button {
+          @extend .mw_btn3; 
+          padding: 5px;
+          text-align: center;
+          margin-left: 20px;
+          > img { display: none; }
+        }
       }
     }
 
@@ -170,6 +187,25 @@ body.mw-product {
   #prod-info-right {
     #top-tabs {
       @extend .mw_bar1;
+      @include bar_plus_minus;
+    }
+    #tab-info {
+      margin: 0 10px;
+
+      span {
+        display: block;
+        font-weight: bold;
+      }
+    }
+    .bold {
+      font-weight: bold;
+    }
+    .rule2 {
+      background: #1A1A1A;
+      height: 1px; 
+    }
+    h2 {
+      @extend .mw_h2;
     }
   }
 
@@ -177,15 +213,35 @@ body.mw-product {
   .mw-reviews_toggler {
     .mw-reviews_button {
       @extend .mw_bar1;
+      @include bar_plus_minus;
+    }
+    .BVBrowserWebkit {
+      margin: 0 10px;
     }
   }
 
+  // Report inappropriate review popup
+  .BVDIPopin {
+    left: auto !important;
+    top: auto !important;
+    width: 95% !important;
+
+    textarea {
+      width: 100% !important;
+    }
+  }
+
+  .BVRRPrimarySummary {
+    width: 100% !important;
+  }
+
   // Bazaar Voice
-  .BVRRRatingsHistogramButton, .BVRRRatingSummaryLinks, .BVRRRatingSummaryLinkWriteFirstID {
+  .BVRRRatingsHistogramButton, .BVRRRatingSummaryLinks, #BVRRRatingSummaryLinkWriteFirstID {
     display: none;
   }
   .BVRRRatingContainerStar, #BVRRRatingSummaryNoReviewsWriteImageLinkID {
       margin: 0 10px;
+      float: none;
       @include leader(.5);
       @include trailer(1);
   }
