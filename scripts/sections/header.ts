@@ -1,11 +1,12 @@
 $("./body//div[@id='container']"){
   $("./div[@id='header']") {
     add_class("mw-header")
+    attribute("style","") // Remove the display:none on cetain pages
 
     insert_bottom("div", class:'mw-top_header') {
       // Phone Number
       insert_bottom("div", class:"mw-phone_number") {
-        insert_bottom("div", class:"icons-phone")
+        insert_bottom("div", class:"icons-telephone")
         insert_bottom("a", class:"mw-pnum", "0870 606 6605", href:"tel:08706066605")
       }
         
@@ -31,7 +32,7 @@ $("./body//div[@id='container']"){
 
     // H&B Logo
     insert_bottom("a", class:"mw-header-logo", href:'/') {
-      insert("span", class:"icons-header") 
+      insert("span", class:"icons-logo") 
     }
    
     insert_bottom("div", class:"mw-search_box") {
@@ -85,4 +86,5 @@ $("./body//div[@id='container']"){
       remove()
     }
   }
+
 }

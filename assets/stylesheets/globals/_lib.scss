@@ -13,28 +13,29 @@ $spacing:  10px;
 //colors
 $body_background: #fff;
 
-$color1: #333; //grey 
-$color2: #3160aa; // blue
-$color3: #BBB; // grey
-$color4: #efefef; // light grey
-
 $black: #333;
 $gray1: #666;
 $gray2: #999;
+$gray3: #BBB;
 $green: #00693b;
 $red1: #7d0009;
 $red2: #970404;
 $blue: #2882BE;
 
+$color1: #333; //grey 
+$color2: #3160aa; // blue
+$color3: $gray3; // grey
+$color4: #efefef; // light grey
+
 $error_color: #ee2a24;
 
 // gradients
 $grad1: linear-gradient(top, #fff 0%, #f2f2f2 100%);    // grey gradient
-$grad2: linear-gradient(top, #3BBEFF 0%, $blue 100%);    // white to blue
+$grad2: linear-gradient(bottom, #2882be, #3bbeff);    // white to blue
 $grad3: linear-gradient(bottom, #343435 0%, #535355 100%); // Dark Gray 
 $grad4: linear-gradient(bottom, #d1d1d1 0%, #fff 100%); // White to Gray 
 $grad5: linear-gradient(bottom, #097509 0%, #61b151 100%); //Green Gradient 
-
+$grad6: linear-gradient(90deg, #96999b 0%, #96999b 1%, #e9ebed 100%); //Dark grey for btns
 // borders
 $border1: 1px solid $color3;
 $border2: 1px dotted $color3;
@@ -280,16 +281,15 @@ $h3_color: $color3;
 }
 
 @mixin btn2 {
-  @include background($grad5);
-  @include box-shadow(0 1px 2px #999, inset 0 1px 0 0px #fff);
-  border-left: $border3;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  color: #666;
+  @include background($grad6);
+  @include box-shadow(inset 0 1px 0 0px #fff);
+  border: 1px solid #717375;
+  @include border-radius(3px);
+  color: $black;
   font-weight: bold;
-  padding: 5px 10px;
-  margin-top: 2px;
-} // Find Event Button
+  font-size: $base_font_size;
+  display: block;
+} 
 
 @mixin btn3 {
   @include background($grad5);
@@ -429,4 +429,27 @@ $h3_color: $color3;
 @mixin padding-tb($padding) {
   padding-top: $padding;
   padding-bottom: $padding;
+}
+
+// label
+@mixin label {
+  font-weight: bold;
+  padding: 0px 0 3px 1px;
+}
+
+// input style
+@mixin singlecolumn_input {
+  @include box-sizing(border-box);
+  @include box-shadow(inset #CCC 0 0 5px);
+  margin-bottom: 5px;
+  padding: 5px;
+  position: relative;
+  width: 100%;
+  clear: both;
+}
+
+// list style
+@mixin list1 {
+  list-style-type: disc;
+  padding: 5px 0 0 20px;
 }

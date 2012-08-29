@@ -16,7 +16,7 @@ $icons-spacing: 15px;
 @import "icons/*.png"; /**/
 @include all-icons-sprites;
 
-$all-icons-sprites: browsearrow_down browsearrow_right chevron_white chevron downarrow envelope fb grid1 grid2 list1 list2 minus plus pin search smalldownarrow smalluparrow sort twitter;
+$all-icons-sprites: basket browsearrow_down browsearrow_right chevron_white chevron downarrow envelope fb grid1 grid2 list1 list2 logo minus plus pin search smalldownarrow smalluparrow sort trash twitter telephone;
 
 @import "_retina.scss";
 // if all the images in your icons/ folder are retina size:
@@ -43,6 +43,11 @@ $all-icons-sprites: browsearrow_down browsearrow_right chevron_white chevron dow
 //   height: 19px;
 //   display: inline-block;
 // }
+
+.icons-logo {
+  width: 230px;
+  height: 22px;
+}
 
 .icons-browsearrow_right {
   width: 13px;
@@ -137,4 +142,19 @@ $all-icons-sprites: browsearrow_down browsearrow_right chevron_white chevron dow
 .icons-smalldownarrow {
   width: 7px;
   height: 4px;
+}
+
+.icons-trash {
+  width: 24px;
+  height: 28px;
+}
+
+.icons-telephone {
+  width: 17px;
+  height: 17px;
+}
+
+.icons-basket {
+  width: 17px;
+  height: 17px;
 }

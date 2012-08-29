@@ -30,3 +30,12 @@
 @import "pages/browse/_category_image.scss";
 @import "pages/browse/_category_text.scss";
 @import "pages/browse/_product.scss";
+
+// Account Pages
+@import "pages/account/_account_base.scss";
+@import "pages/account/_login.scss";
+@import "pages/account/customer_service/_store_locator.scss";
+@import "pages/account/customer_service/_landing.scss";
+
+// Checkout Pages
+@import "pages/checkout/_cart.scss";

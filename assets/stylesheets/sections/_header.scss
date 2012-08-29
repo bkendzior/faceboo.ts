@@ -10,8 +10,9 @@
       float: left;
       font-weight: bold;
 
-      .icons-phone {
-      
+      .icons-telephone {
+        display: inline-block; 
+        margin-bottom: -2px;
       }
 
       a {
@@ -25,13 +26,19 @@
       font-weight: bold;
 
       .icons-basket {
-      
+        display: inline-block; 
+        margin-bottom: -2px;
       }
 
       span {
         color: $gray2; 
       } 
     }
+  }
+
+  .mw-header-logo > span {
+    display: block;
+    margin: 20px auto 20px;
   }
 
   .mw-find_a_store {
@@ -115,7 +122,7 @@
     }
     .mw-browse_contents {
     
-      a {
+      a { 
         @extend .mw_bar1;
         @include bar_chevron;
         margin: 0 -10px; 
