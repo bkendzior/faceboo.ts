@@ -24,6 +24,8 @@ $("./body") {
         $("./div[@class='basket-checkout-pad']/input") {
           btn_delegate() {
             add_class("mw_btn3")
+            text() { replace(/.*/,"") }
+            inject("CHECKOUT") 
           } 
         }
       }

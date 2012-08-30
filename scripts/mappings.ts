@@ -38,6 +38,14 @@ match($status) {
         log_page('pages/checkout/checkout.ts', $curr_file)
         @import pages/checkout/checkout.ts
       }      
+
+      // Checkout - Receipt 
+      // Ex: /scart/receipt.asp
+      with(/^\/scart\/receipt\.asp/) {
+        log_page('pages/checkout/receipt.ts', $curr_file)
+        @import pages/checkout/receipt.ts
+      } 
+
       // ---------------------------------------------
       //  Account - Login Page
       //
