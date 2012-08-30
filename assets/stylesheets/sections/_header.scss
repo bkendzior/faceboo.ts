@@ -129,4 +129,28 @@
       }
     } 
   }
+
+  .mw-simple_header {
+    margin: 0 -10px;
+    ul {
+      text-align: center;
+      li {
+        span {
+          &:after {
+            content: '.';
+            padding-right: 1px;
+          }
+        }
+       
+        display: inline-block;
+        margin: 5px;
+        color: $gray1;
+
+        &.active {
+          font-weight: bold;
+          color: $green;
+        }
+      }
+    }
+  }
 }

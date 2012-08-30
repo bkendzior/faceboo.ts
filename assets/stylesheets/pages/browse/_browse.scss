@@ -58,10 +58,9 @@ body.mw-browse {
   }
 
   // Page title
-  #page-title-cat {
+  #page-title-cat, .textcontainer > h1{
     color: $green;
-    @include adjust-font-size-to($base-font-size);
-    font-size: 24px;
+    @extend .mw_h1;
   }
 
   // Sort By

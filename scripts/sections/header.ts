@@ -87,4 +87,12 @@ $("./body//div[@id='container']"){
     }
   }
 
+  // Simple header for checkout flow
+  $(".//div[@id='simple-header']") {
+    add_class("mw-simple_header")
+    move_to("//div[@class='mw-browse']", "after")
+    $("./h1") {
+      remove()
+    }
+  }
 }

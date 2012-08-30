@@ -182,7 +182,6 @@ $h3_color: $color3;
   div:first-of-type {
     @include box-flex(1);
   }
-
 }
 
 @mixin bar2 {
@@ -205,18 +204,18 @@ $h3_color: $color3;
 }
 
 @mixin bar4 {
-  @include bar_inner_base;
-  border: 1px solid #e1e1e1;
-  border-radius: 3px;
-  background-color: #2B0073;
+  background-color: #007f00;
   color: #fff;
-  font-weight: bold;
+  padding: 0 10px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 
 @mixin bar5 {
-  @include bar_inner_base;
-  background-color: #efefef;
-} // this will be the 'title bar' on an accordian box
+  background-color: #7f7f7f;
+  color: #fff;
+  padding: 7px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+} 
 
 @mixin bar6 {
   @include bar_inner_base;

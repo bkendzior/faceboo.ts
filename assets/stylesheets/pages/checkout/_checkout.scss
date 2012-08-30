@@ -1,0 +1,137 @@
+body.mw-checkout {
+  
+  input[type='text'], input[type='password'], input[role='textbox'], textarea {
+    @include singlecolumn_input;
+  }
+
+  select {
+    height: 40px; 
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    background-image: linear-gradient(top, #fff 0%, #ededed 100%);
+    color: $green;
+    font-weight: bold;
+    @include adjust-font-size-to($h2-size);
+  }
+
+  #main {
+
+    #checkout {
+      #checkout-top {
+        margin: 0 10px;
+        
+        // Page title
+        #checkout-info {
+          .checkout-title {
+            @include adjust-font-size-to($h1_size);
+            color: $black;
+          }
+          .info {
+            @include adjust-font-size-to($base_font_size);
+            color: $black;
+          }
+        }
+        #checkout-buttons2 {
+          display: none;
+        }
+      }
+  
+      #checkout-main {
+        @import "pages/checkout/_basket.scss";
+
+        // Addresses
+        .form-left {
+          float: left;
+          //@include adjust-font-size-to($h2-size);
+          color: $gray1;
+        }
+        .form-right {
+          text-align:right; 
+          //@include adjust-font-size-to($h2-size);
+          color: $black;
+
+          &:nth-of-type(2), &:nth-of-type(4) {
+            border-bottom: 1px solid #BBB; 
+          }
+        }
+
+        .bold {
+          font-weight: bold;
+        }
+
+        // Headers
+        #shipping-add-col1, #billing-add-col1 {
+          @extend .mw_bar5;
+
+          display: inline-block;
+          width: 100%;
+          
+          #shipping-add-col2, #billing-add-col2 {
+            display: inline-block; 
+            float:right;
+            
+            > a {
+              @extend .mw_btn3; 
+              font-weight: bold;
+              padding: 3px;
+              > img {
+                display: none;
+              }
+            }
+          }
+        }
+
+        #payment-info-box {
+          > input {
+            display: none;
+          }
+          .mw-confirm_order {
+            margin: 0 10px;
+            @include leader(1);
+            @include trailer(1);
+            
+            @extend .mw_btn3;
+            padding:10px;
+            text-align: center;
+            text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+          }
+        }
+
+        #payment-address-bill, #payment-address-shipp {
+          @include padding-leader(.5);
+          @include padding-trailer(.5);
+          margin: 0 10px;
+        }
+
+        form {
+          margin: 0 10px;
+
+          // Coupon Voucher Codes header
+          #voucher-info-title, #payment-info-title {
+            margin: 0 -10px;
+            @include leader(1);
+            @include trailer(1);
+          }
+        } 
+
+        #payment-info-title {
+          margin: 0 10px;
+        }
+
+        .formerrorbox {
+          margin: 0 10px;
+        }
+
+        #checkout-bottom-bar, #checkout-top-bar, #voucher-info-title, #payment-info-title {
+          @extend .mw_bar4;
+          @include adjust-font-size-to($h2-size);
+        }
+
+        .form-span {
+          @include adjust-font-size-to($emp_size);
+          color: $gray1;
+        }
+      }
+    }
+  }
+}

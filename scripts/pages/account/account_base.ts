@@ -80,12 +80,4 @@ $("./body") {
     }
   } 
 
-  // Simple header for checkout flow
-  $(".//div[@id='simple-header']") {
-    add_class("mw-simple_header")
-    move_to("..//div[@class='mw-breadcrumb']", "after")
-    $("./h1") {
-      remove()
-    }
-  }
 }

@@ -21,17 +21,17 @@ $("./body") {
     } // end Transform Breadcrumbs
 
     // Page Content
-    $("./div[@id='content']//div[@class='page-content']") {
+    $("./div[@id='content']//div[@class='textcontainer']") {
       // Remove sort bar from bottom 
-      $("./div[@class='paging-bar-top'][2]") {
+      $(".//div[@class='paging-bar-top'][2]") {
         remove()
       }
       // Remove pagination from top 
-      $("./div[@class='paging-bar'][1]") {
+      $(".//div[@class='paging-bar'][1]") {
         remove()
       }
       // Move the title, remove the top image and description
-      $("./div[@id='page-top-box-cat']") {
+      $(".//div[@id='page-top-box-cat']") {
         $("./div[@id='page-title-cat']") {
           move_to("ancestor::div[@class='page-content']", "top")
           add_class("mw_h1")
@@ -39,7 +39,7 @@ $("./body") {
         remove()
       }
 
-      $("./div[contains(@class,'paging-bar-top')]") {
+      $(".//div[contains(@class,'paging-bar-top')]") {
         // Sort By Bar
         $("./div[contains(@class,'paging-sortby')]") {
           add_class("mw-sortby")
@@ -69,7 +69,7 @@ $("./body") {
       }
 
       // Product List
-      $("./div[@class='grid_container']") {
+      $(".//div[@class='grid_container']") {
         attributes(id:"mw_main_item_wrapper")
         $("./div[contains(@class,'grid_box_')]") {
           $("./div[@class='grid_box_price']") {
@@ -101,7 +101,7 @@ $("./body") {
       }
 
       // Pagination (Bottom)
-      $("./div[@class='paging-bar']") {
+      $(".//div[@class='paging-bar']") {
         $("./div[contains(@class,'page-number-row')]") {
           $("./div[@class='paging-button-current']") {
             add_class("visible-current")

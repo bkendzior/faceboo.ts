@@ -26,11 +26,18 @@ match($status) {
         @import pages/home.ts
       }
 
+      // Checkout - Cart Page
       with(/\/pages\/cart\.asp/) {
         log_page('pages/checkout/cart.ts', $curr_file)
         @import pages/checkout/cart.ts
       }
-      
+
+      // Checkout - Review and Pay
+      // Ex: /scart/checkout.asp
+      with(/^\/scart\/checkout\.asp/) {
+        log_page('pages/checkout/checkout.ts', $curr_file)
+        @import pages/checkout/checkout.ts
+      }      
       // ---------------------------------------------
       //  Account - Login Page
       //
@@ -192,7 +199,7 @@ match($status) {
 
       // Browse Pages
       // Ex: '/pages/categories.asp?cid=39&linkpos=row2'
-      with (/\/pages\/categories.asp/) {
+      with (/\/pages\/(categories|product).asp/) {
         log_page('pages/browse/browse.ts', $curr_file)
         @import  'pages/browse/browse.ts'
       }
