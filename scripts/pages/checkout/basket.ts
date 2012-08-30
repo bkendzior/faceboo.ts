@@ -67,5 +67,4 @@ $(".//table[@id='basket']") {
       move_to("../div[@class='basket-item-quantity']","bottom")
     }
   }
-
 }
