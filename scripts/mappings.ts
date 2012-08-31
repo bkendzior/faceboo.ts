@@ -128,6 +128,9 @@ match($status) {
       with(/\/account\/personaldetails\/favourites/) {
         log_page('pages/account/account_base.ts', $curr_file)
         @import pages/account/account_base.ts
+        
+        log_page('pages/account/favourites.ts', $curr_file)
+        @import pages/account/favourites.ts
       } 
 
       // Customer Services - Landing Page
@@ -227,6 +230,22 @@ match($status) {
         log_page('pages/browse/category_text.ts', $curr_file)
         @import  'pages/browse/category_text.ts'
       }
+
+      // FAQ Page
+      with(/pages\/infocenter\.asp/) {
+        log_page('pages/more/more_base.ts', $curr_file)
+        @import 'pages/more/more_base.ts'
+
+        log_page('pages/more/faq.ts', $curr_file)
+        @import 'pages/more/faq.ts'
+      }
+
+      with(/pages\/requestcat\.asp/) {
+        log_page('pages/more/more_base.ts', $curr_file)
+        @import 'pages/more/more_base.ts'
+
+      }
+
 
       with(/404\.html/) {
         log_page('pages/error.ts', $curr_file)

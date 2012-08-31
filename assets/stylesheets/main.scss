@@ -36,6 +36,7 @@
 @import "pages/account/_account_base.scss";
 @import "pages/account/_login.scss";
 @import "pages/account/_landing.scss";
+@import "pages/account/_favourites.scss";
 @import "pages/account/customer_service/_store_locator.scss";
 @import "pages/account/customer_service/_landing.scss";
 
@@ -43,3 +44,7 @@
 @import "pages/checkout/_cart.scss";
 @import "pages/checkout/_checkout.scss";
 @import "pages/checkout/_receipt.scss";
+
+// More Pages
+@import "pages/more/_more_base.scss";
+@import "pages/more/_faq.scss";

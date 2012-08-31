@@ -5,6 +5,8 @@ body.mw-account_base {
 
   h2{
     @include adjust-font-size-to($h2_size);
+    @extend .mw_h2;
+    padding: 0;
   }
 
   h3 {
@@ -13,7 +15,7 @@ body.mw-account_base {
   
   
   .mw-breadcrumb {
-    * {
+    *:not(.mw-account_btn){
       display: inline-block;
       padding-left: 5px; 
       color: $gray1;
@@ -21,6 +23,14 @@ body.mw-account_base {
 
     div.breadcrumb {
       font-weight: bold;
+    }
+    .mw-account_btn {
+      float:right;
+      margin-right: 10px;
+      span {
+        color: white;
+        padding: 0 5px;
+      }
     }
     @include adjust-font-size-to(12px);
     @include padding-leader(.25);
@@ -31,18 +41,29 @@ body.mw-account_base {
 
   .mw-cust_serve {
     .header {
-      width: 50%;
       text-align: center;
-      @include adjust-font-size-to($h2_size);
-    }
-  }
+      margin: 10px;
+      margin-bottom: 0px;
+      > h2 {
+        @include bar_browsearrows;
 
-  .mw-account_btn {
-    @include leader(1);
-    display: inline-block;
-    padding: 10px;
+        > div.mw-arrow {
+          top: -22px !important;
+          right: 10px !important;
+        }
+      } 
+    }
+    .navLinks {
+      > li > a {
+        margin: 0 10px;
+        @extend .mw_bar1;
+        @include bar_chevron;
+      }
+    }
     @include trailer(1);
   }
+
+
   
   .accountMain {
     margin: 0 10px;

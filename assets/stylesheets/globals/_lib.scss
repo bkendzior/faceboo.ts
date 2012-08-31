@@ -175,6 +175,7 @@ $h3_color: $color3;
 
 @mixin bar1 {
   @include bar_inner_base;
+  @include adjust-font-size-to($base_font_size);
   @include background($grad1);
   color: $color2;
   border: 1px solid #e1e1e1;

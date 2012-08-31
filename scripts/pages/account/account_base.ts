@@ -33,21 +33,28 @@ $("./body") {
       $("./div[@class='header']/h2") {
         attributes(data-ur-toggler-component:"button", data-ur-state:"disabled")
         add_class("mw_btn1")
+        insert_bottom("div", class:'mw-arrow')
       } 
 
       // Links
       $("./ul[@class='navLinks']") {
         attributes(data-ur-toggler-component:"content", data-ur-state:"disabled")
+        $("./li/a") {
+          insert_bottom("div", class:"mw-icon_bar")
+        }
       }
 
       // Remove the large nav buttons and turn them into list items
       $("./div[@class='largeNavButton']") {
-        $("./a/img") {
-          $alt_text = fetch("@alt")
-          $("ancestor::a[1]") {
-            inject($alt_text)
+        $("./a") {
+          $("./img") {
+            $alt_text = fetch("@alt")
+            $("ancestor::a[1]") {
+              inject($alt_text)
+            }
+            remove()
           }
-          remove()
+          insert("div",class:"mw-icon_bar") 
         }
         name("li")
         move_to("../ul","bottom") 
@@ -57,11 +64,6 @@ $("./body") {
 
     // Account Main
     $("./div[@class='accountMain']") {
-      // Headings
-      $(".//h1[contains(@class,'corner-tl')]") {
-        add_class("mw-heading")
-      }
-
       // Green Button
       $(".//a[@class='greenbutton']") {
         add_class("mw_btn3 mw-account_btn")
@@ -76,7 +78,7 @@ $("./body") {
     // Blue Logout Button
     $(".//a[@class='bluebutton']") {
       add_class("mw_btn4 mw-account_btn")
-      move_to("ancestor::div[@id='main']//div[@class='accountMain']","top")
+      move_to("ancestor::div[@id='main']//div[@class='mw-breadcrumb']","bottom")
     }
   } 
 
