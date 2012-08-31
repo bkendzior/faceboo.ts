@@ -188,7 +188,8 @@ match($status) {
         log_page('pages/account/account_base.ts', $curr_file)
         @import pages/account/account_base.ts
         
-        //log_page('pages/account.ts', $curr_file)
+        log_page('pages/account/landing.ts', $curr_file)
+        @import pages/account/landing.ts
       }
 
       // PDP Pages
@@ -225,6 +226,11 @@ match($status) {
       with (/iq\.asp\?SearchText/) {
         log_page('pages/browse/category_text.ts', $curr_file)
         @import  'pages/browse/category_text.ts'
+      }
+
+      with(/404\.html/) {
+        log_page('pages/error.ts', $curr_file)
+        @import 'pages/error.ts'
       }
 
       // ---------------------------------------------

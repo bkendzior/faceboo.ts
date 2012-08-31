@@ -24,6 +24,7 @@
 
 // Pages
 @import "pages/_home.scss";
+@import "pages/_error.scss";
 
 // Browse Pages
 @import "pages/browse/_browse.scss";
@@ -34,6 +35,7 @@
 // Account Pages
 @import "pages/account/_account_base.scss";
 @import "pages/account/_login.scss";
+@import "pages/account/_landing.scss";
 @import "pages/account/customer_service/_store_locator.scss";
 @import "pages/account/customer_service/_landing.scss";
 
