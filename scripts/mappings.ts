@@ -71,14 +71,14 @@ match($status) {
         log_page('pages/account/register.ts', $curr_file)
         #@import pages/account/register.ts
       }
-
-      
-      // Account - Personal Details
-      // Ex: '/account/personaldetails/'
-      with(/\/account\/personaldetails/) {
-        log_page('pages/account/account_base.ts', $curr_file)
-        @import pages/account/account_base.ts
-      }
+      //
+      //      
+      //      // Account - Personal Details
+      //      // Ex: '/account/personaldetails/'
+      //      with(/\/account\/personaldetails/) {
+      //        log_page('pages/account/account_base.ts', $curr_file)
+      //        @import pages/account/account_base.ts
+      //      }
 
       // Account - Shipping Address
       // Ex: '/account/personaldetails/shipping'
