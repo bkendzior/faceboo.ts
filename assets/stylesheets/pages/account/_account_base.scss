@@ -27,6 +27,7 @@ body.mw-account_base {
     .mw-account_btn {
       float:right;
       margin-right: 10px;
+      padding: 0;
       span {
         color: white;
         padding: 0 5px;
@@ -62,8 +63,10 @@ body.mw-account_base {
     }
     @include trailer(1);
   }
-
-
+    
+  input[type='text'], input[type='password'], input[role='textbox'], select, textarea {
+    @include singlecolumn_input;
+  }
   
   .accountMain {
     margin: 0 10px;
@@ -73,9 +76,7 @@ body.mw-account_base {
       color: green;
     }
 
-    input[type='text'], input[type='password'], input[role='textbox'], select, textarea {
-      @include singlecolumn_input;
-    }
+
 
     label {
       @include label;
@@ -90,4 +91,7 @@ body.mw-account_base {
     }
   }
 
+  .mw_btn3, .mw_btn4 {
+    padding: 10px;
+  }
 }

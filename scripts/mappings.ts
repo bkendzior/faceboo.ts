@@ -231,7 +231,7 @@ match($status) {
         @import  'pages/browse/category_text.ts'
       }
 
-      // FAQ Page
+      // Infocenter 
       with(/pages\/infocenter\.asp/) {
         log_page('pages/more/more_base.ts', $curr_file)
         @import 'pages/more/more_base.ts'
@@ -240,6 +240,15 @@ match($status) {
         @import 'pages/more/faq.ts'
       }
 
+      // Rewards For life 
+      with(/pages\/rewards\.asp/) {
+        log_page('pages/more/more_base.ts', $curr_file)
+        @import 'pages/more/more_base.ts'
+
+        log_page('pages/more/rfl.ts', $curr_file)
+        @import 'pages/more/rfl.ts'
+      }      
+        
       with(/pages\/requestcat\.asp/) {
         log_page('pages/more/more_base.ts', $curr_file)
         @import 'pages/more/more_base.ts'

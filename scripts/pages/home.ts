@@ -18,9 +18,7 @@ $("./body") {
         insert_bottom("div") {
           move_here("ancestor::div[@id='main']/div[@id='content']//a[@id='hp-box3-3']")
           move_here("ancestor::div[@id='main']//div[@id='cat-box3']/h3/div/a[position()=last()]") {
-            text() {
-              replace(/\A.*\z/,"Find out more") 
-            }
+            text("Find out more") 
           }
         }
       }
@@ -38,9 +36,7 @@ $("./body") {
         // Find out More
         insert_bottom("div") {
           move_here("ancestor::div[@id='main']//div[@id='cat-box3']/h3/div/a[position()=last()]") {
-            text() {
-              replace(/\A.*\z/,"Find out more") 
-            }
+            text("Find out more") 
           }
         }
       }
