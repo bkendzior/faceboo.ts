@@ -1,0 +1,41 @@
+body.mw-rfl {
+
+  #content {
+    @include padding-leader(1);
+
+    #MyPointsBalance {
+      .header {
+        @extend .mw_h2;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      #btnCheckMyPoints {
+        @extend .mw_btn2;
+        padding: 5px 10px;
+      }
+    }
+
+    #loyalty-landing-box-text-wide {
+      @include leader(1);
+    }
+
+    #loyalty-landing-links { 
+      @include leader(1);
+
+      > ul > li {
+        > a {
+          @extend .mw_bar1;
+          margin: 0 -10px;
+        }
+
+        > img {
+          float: right;
+        }
+      }
+
+    }
+  }
+}
