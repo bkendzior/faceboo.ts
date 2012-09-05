@@ -25,7 +25,15 @@ body.mw-faq {
 
       // Infocenter Navigation
       .infocentrenav {
-        a {
+       > p.infocenter-navlist > a {
+          display: block;
+          @extend .mw_bar4;
+          background-image: none;
+          padding: 5px;
+          @include leader(1);
+       }
+        
+        > a {
           display: block;
           @extend .mw_bar1;
           @include bar_chevron;
@@ -33,6 +41,10 @@ body.mw-faq {
 
         div.mw-arrow_icon {
           top: -10px !important;
+        }
+
+        > br {
+          display: none;
         }
       }
 
@@ -61,6 +73,12 @@ body.mw-faq {
           line-height: 1em;
           display: block;
         }
+      }
+
+      table {
+        width: 100%;
+        @include leader(1);
+        @include trailer(1);
       }
     }
   }

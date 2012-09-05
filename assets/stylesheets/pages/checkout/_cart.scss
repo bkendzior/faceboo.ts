@@ -35,6 +35,22 @@ body.mw-cart {
         }
       }
     }
+
+    #removedItems {
+
+      .heading {
+        font-weight: bold;
+      }
+
+      .mw-tr {
+        @include leader(1);
+      }
+      
+      .reason {
+        color: $red1;
+      }
+
+    }
     
     @import "pages/checkout/_basket.scss";
   }

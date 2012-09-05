@@ -33,5 +33,16 @@ $("./body") {
       log_page('pages/checkout/basket.ts', $curr_file)
       @import basket.ts
     }
+
+    $(".//table[@id='removedItems']") {
+      name("div")
+      $(".//td | .//tbody | .//tfoot") {
+        name("div")
+      }
+       $(".//tr") {
+        name("div")
+        add_class("mw-tr")
+      } 
+    }
   }
 }

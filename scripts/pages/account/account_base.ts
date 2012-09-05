@@ -67,16 +67,32 @@ $("./body") {
       // Green Button
       $(".//a[@class='greenbutton']") {
         add_class("mw_btn3 mw-account_btn")
+        $("./ancestor::div[1]") {
+          add_class("mw-trailer")
+        }
       }
 
       // Blue Button
-      $(".//div[@class='blueSlidingButton']/input") {
+      $(".//div[contains(@class,'blueSlidingButton')]/input") {
         add_class("mw_btn4 mw-account_btn")
+        
+        $("./ancestor::div[1]") {
+          add_class("mw-trailer")
+        }
+      }
+        
+      // Grey Button
+      $(".//div[contains(@class,'greySlidingButton')]/input") {
+        add_class("mw_btn2 mw-account_btn")
+        
+        $("./ancestor::div[1]") {
+          add_class("mw-trailer")
+        }
       }
     }
     
     // Blue Logout Button
-    $(".//a[@class='bluebutton']") {
+    $(".//div[contains(@class,'rightmargin')]/a[@class='bluebutton']") {
       add_class("mw_btn4 mw-account_btn")
       move_to("ancestor::div[@id='main']//div[@class='mw-breadcrumb']","bottom")
     }

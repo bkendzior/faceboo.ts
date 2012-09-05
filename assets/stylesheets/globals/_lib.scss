@@ -35,7 +35,7 @@ $grad2: linear-gradient(bottom, #2882be, #3bbeff);    // white to blue
 $grad3: linear-gradient(bottom, #343435 0%, #535355 100%); // Dark Gray 
 $grad4: linear-gradient(bottom, #d1d1d1 0%, #fff 100%); // White to Gray 
 $grad5: linear-gradient(bottom, #097509 0%, #61b151 100%); //Green Gradient 
-$grad6: linear-gradient(90deg, #96999b 0%, #96999b 1%, #e9ebed 100%); //Dark grey for btns
+$grad6: linear-gradient(bottom, #96999b 0%, #96999b 1%, #e9ebed 100%); //Dark grey for btns
 // borders
 $border1: 1px solid $color3;
 $border2: 1px dotted $color3;
@@ -78,7 +78,7 @@ $h3_color: $color3;
 @mixin h2 {
   @include adjust-font-size-to($h2_size);
   font-weight: bold;
-  padding: 10px;
+  padding: 10px ;
   color: $h2_color;
 }
 

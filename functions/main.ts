@@ -2,7 +2,13 @@
 ### Site Functions
 ####################
 
-
+@func XMLNode.ga_mobile_id(Text %new_id) {
+  $("/html//script[contains(text(),'UA-')]") {
+    text() {
+      replace(/UA\-\d*\-\d/,%new_id)
+    }
+  }
+}
 
 @func XMLNode.remove_clearer() {
   $("/html//div[@class='clearer']") {

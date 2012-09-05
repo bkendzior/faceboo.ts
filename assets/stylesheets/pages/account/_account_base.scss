@@ -1,6 +1,7 @@
 body.mw-account_base {
   h1{
     @include adjust-font-size-to($h1_size);
+    @extend .mw_h1;
   }
 
   h2{
@@ -12,7 +13,16 @@ body.mw-account_base {
   h3 {
     @include adjust-font-size-to($h3_size);
   }
-  
+ 
+  strong {
+    font-weight: bold;
+  }
+
+  #PageContent_3 {
+    >p {
+      @include leader(1);
+    }
+  }
   
   .mw-breadcrumb {
     *:not(.mw-account_btn){
@@ -93,5 +103,10 @@ body.mw-account_base {
 
   .mw_btn3, .mw_btn4 {
     padding: 10px;
+  }
+
+  .mw-trailer {
+    @include leader(1);
+    @include trailer(1);
   }
 }

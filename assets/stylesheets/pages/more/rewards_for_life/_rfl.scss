@@ -28,11 +28,15 @@ body.mw-rfl {
       > ul > li {
         > a {
           @extend .mw_bar1;
+          @include bar_chevron;
           margin: 0 -10px;
+          > div.mw-chevron {
+            top: -10px; 
+          }
         }
 
         > img {
-          float: right;
+          display: none;
         }
       }
 

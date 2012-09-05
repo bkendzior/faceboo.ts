@@ -4,6 +4,7 @@ $("/html") {
   rewrite_links()
   absolutize_srcs()
 
+  ga_mobile_id("UA-18779593-8")
 
   # Needed to begin mobilizing
   remove_all_styles()

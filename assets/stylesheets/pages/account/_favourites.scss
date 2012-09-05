@@ -1,3 +1,46 @@
-body.mw-favorites {
+body.mw-favourites {
 
+  .mw-table {
+    @include leader(1);
+
+    .mw-table_item {
+      min-height: 200px;
+
+      div:nth-of-type(1) {
+        float: left;
+        img {
+          max-width: 120px;
+          margin-right: 20px; 
+        }
+      }
+
+      // Title
+      div:nth-of-type(2) {
+        @extend .mw_h1; 
+        > a {color: $green;}
+      }
+
+      // Quantity 
+      div:nth-of-type(3) {
+        @extend .mw_h4; 
+        &:before {
+          content: 'Quantity: ';
+        }
+      }
+      
+      // Brand 
+      div:nth-of-type(4) {
+        @extend .mw_h2; 
+        > a {color: $black;}
+      }
+    }
+  }
+
+  .mw-account_btn {
+    white-space: nowrap;
+  }
+  .mw-trailer {
+    @include leader(3);
+  }
+  
 }

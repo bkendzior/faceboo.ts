@@ -16,15 +16,17 @@ match($status) {
 
     match($path) {
     
-      // ---------------------------------------------
       // Home Page
-      //
-      // Ex: '/'
-      // ---------------------------------------------
       with(/^\/$|^\/\?/) {
         log_page('pages/home.ts', $curr_file)
         @import pages/home.ts
       }
+
+      // ------------------------------
+      // ---------------------------------------------
+      // CHECKOUT SECTION 
+      // ---------------------------------------------
+      // ------------------------------
 
       // Checkout - Cart Page
       with(/\/pages\/cart\.asp/) {
@@ -46,11 +48,14 @@ match($status) {
         @import pages/checkout/receipt.ts
       } 
 
+      // ------------------------------
       // ---------------------------------------------
-      //  Account - Login Page
-      //
+      // ACCOUNT SECTION 
+      // ---------------------------------------------
+      // ------------------------------
+      
+      // Account - Login Page
       // Ex: '/account/login?redirecturl=/account/'
-      // ---------------------------------------------
       with(/\/account\/login.*/) {
         log_page('pages/account/account_base.ts', $curr_file)
         @import pages/account/account_base.ts
@@ -59,11 +64,8 @@ match($status) {
         @import pages/account/login.ts
       }
 
-      // ---------------------------------------------
       // Account - Register Page 
-      //
       // Ex: '/account/register?redirecturl=/account/&url=/account/login.asp'
-      // ---------------------------------------------
       with(/\/account\/register.*/) {
         log_page('pages/account/account_base.ts', $curr_file)
         @import pages/account/account_base.ts
@@ -71,14 +73,6 @@ match($status) {
         log_page('pages/account/register.ts', $curr_file)
         #@import pages/account/register.ts
       }
-      //
-      //      
-      //      // Account - Personal Details
-      //      // Ex: '/account/personaldetails/'
-      //      with(/\/account\/personaldetails/) {
-      //        log_page('pages/account/account_base.ts', $curr_file)
-      //        @import pages/account/account_base.ts
-      //      }
 
       // Account - Shipping Address
       // Ex: '/account/personaldetails/shipping'
@@ -97,9 +91,12 @@ match($status) {
 
       // Account - Order History
       // Ex: '/account/personaldetails/orderhistory'
-      with(/\/account\/personaldetails\/orderhistory/) {
+      with(/\/account\/personaldetails\/order(history|details)/) {
         log_page('pages/account/account_base.ts', $curr_file)
         @import pages/account/account_base.ts
+
+        log_page('pages/account/order_history.ts', $curr_file)
+        @import pages/account/order_history.ts
       }
      
       // Account - Change Password
@@ -125,6 +122,7 @@ match($status) {
 
       // Account - Favourites  
       // Ex: '/account/personaldetails/favourites'
+      // TODO
       with(/\/account\/personaldetails\/favourites/) {
         log_page('pages/account/account_base.ts', $curr_file)
         @import pages/account/account_base.ts
@@ -132,6 +130,21 @@ match($status) {
         log_page('pages/account/favourites.ts', $curr_file)
         @import pages/account/favourites.ts
       } 
+
+      // Account - Favourites  
+      // Ex: '/account/personaldetails'
+      // TODO
+      with(/\/account\/personaldetails/) {
+        log_page('pages/account/account_base.ts', $curr_file)
+        @import pages/account/account_base.ts
+      } 
+
+
+      // ------------------------------
+      // ---------------------------------------------
+      // CUSTOMER SERVICES 
+      // ---------------------------------------------
+      // ------------------------------
 
       // Customer Services - Landing Page
       // Ex: '/account/customerservices/'
@@ -179,14 +192,13 @@ match($status) {
       // Customer Services - Privacy & Cookie Policy
       // Ex: '/account/customerservices/privacy'
       with (/\/account\/customerservices\/privacy/) {
-      
+        log_page('pages/account/account_base.ts', $curr_file)
+        @import pages/account/account_base.ts
       }
 
-      // ---------------------------------------------
       // Account - Landing Page
-      //
       // Ex: '/account/'
-      // ---------------------------------------------
+      // Make sure this is the last account mapping (to avoid being mapped from query parameters)
       with(/\/account\/$/) {
         log_page('pages/account/account_base.ts', $curr_file)
         @import pages/account/account_base.ts
@@ -194,6 +206,50 @@ match($status) {
         log_page('pages/account/landing.ts', $curr_file)
         @import pages/account/landing.ts
       }
+
+      // ------------------------------
+      // ---------------------------------------------
+      // REWARDS FOR LIFE 
+      // ---------------------------------------------
+      // ------------------------------
+
+      // Rewards For life 
+      with(/pages\/rewards\.asp/) {
+        log_page('pages/more/more_base.ts', $curr_file)
+        @import 'pages/more/more_base.ts'
+
+        log_page('pages/more/rewards_for_life/rfl.ts', $curr_file)
+        @import 'pages/more/rewards_for_life/rfl.ts'
+      }      
+
+      // Rewards for Life - Terms
+      // Ex: '/rewardsforlife/terms'
+      with(/(rewardsforlife\/terms|pages\/rfl\-terms\.asp)/) {
+        log_page('pages/more/more_base.ts', $curr_file)
+        @import 'pages/more/more_base.ts'
+      }
+        
+      // Rewards for Life - FAQ's
+      // Ex: '/rewardsforlife/faqs'
+      with(/rewardsforlife\/faqs/) {
+        log_page('pages/more/more_base.ts', $curr_file)
+        @import 'pages/more/more_base.ts'
+
+        log_page('pages/more/rewards_for_life/rfl_faq.ts', $curr_file)
+        @import 'pages/more/rewards_for_life/rfl_faq.ts'
+      }
+
+      // Rewards for Life - Card
+      // Ex: '/rewardsforlife/card'
+      with(/rewardsforlife\/card/) {
+        log_page('pages/more/more_base.ts', $curr_file)
+        @import 'pages/more/more_base.ts'
+      }
+      // ------------------------------
+      // ---------------------------------------------
+      // PRODUCT & BROWSE PAGES
+      // ---------------------------------------------
+      // ------------------------------
 
       // PDP Pages
       // Ex: '/pages/product_detail.asp?pid=881&prodid=640&cid=54'
@@ -204,7 +260,7 @@ match($status) {
 
       // Image Category Pages
       // Ex: '/pages/categories.asp?cid=5&linkpos=row2&MCat=1'
-      with (/\/pages\/categories.asp.*((MCat|rdcnt)\=1|cid=(316|5$))/) {
+      with (/\/pages\/categories.asp.*((MCat)\=1|cid=(316|5$))/) {
         log_page('pages/browse/category_image.ts', $curr_file)
         @import  'pages/browse/category_image.ts'
       }
@@ -231,6 +287,25 @@ match($status) {
         @import  'pages/browse/category_text.ts'
       }
 
+      // ------------------------------
+      // ---------------------------------------------
+      // MORE (misc) PAGES
+      // ---------------------------------------------
+      // ------------------------------
+
+      // Contect Us
+      // Eg: /pages/contactus.asp
+      with(/pages\/contactus\.asp/) {
+        log_page('pages/more/more_base.ts', $curr_file)
+        @import 'pages/more/more_base.ts'
+      }
+
+      // About Us
+      with(/pages\/aboutus\.asp/) {
+        log_page('pages/more/more_base.ts', $curr_file)
+        @import 'pages/more/more_base.ts'
+      }
+
       // Infocenter 
       with(/pages\/infocenter\.asp/) {
         log_page('pages/more/more_base.ts', $curr_file)
@@ -240,22 +315,29 @@ match($status) {
         @import 'pages/more/faq.ts'
       }
 
-      // Rewards For life 
-      with(/pages\/rewards\.asp/) {
-        log_page('pages/more/more_base.ts', $curr_file)
-        @import 'pages/more/more_base.ts'
+      // Map pages
+      with(/pages\/mapstores\.asp/) {
+        log_page('pages/more/maps.ts', $curr_file)
+        @import 'pages/more/maps.ts'
+      }
 
-        log_page('pages/more/rfl.ts', $curr_file)
-        @import 'pages/more/rfl.ts'
-      }      
-        
+            
+      // Request a Category
+      // Ex: /pages/requestcat.asp
       with(/pages\/requestcat\.asp/) {
         log_page('pages/more/more_base.ts', $curr_file)
         @import 'pages/more/more_base.ts'
-
       }
 
 
+      // Article Pages
+      // Sports | vitamins | minerals | herbal | food | toiletries 
+      with(/pages\/(sports|vitamins|minerals|herbal|food|toiletries).asp/) {
+        log_page('pages/more/more_base.ts', $curr_file)
+        @import 'pages/more/more_base.ts'
+      } 
+      
+      // Basic 404 page styling
       with(/404\.html/) {
         log_page('pages/error.ts', $curr_file)
         @import 'pages/error.ts'
@@ -263,7 +345,6 @@ match($status) {
 
       // ---------------------------------------------
       // Page not mapped
-      //
       // ---------------------------------------------
       else() {
         log("--> No page match in mappings.ts")

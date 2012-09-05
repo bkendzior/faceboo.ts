@@ -37,6 +37,7 @@
 @import "pages/account/_login.scss";
 @import "pages/account/_landing.scss";
 @import "pages/account/_favourites.scss";
+@import "pages/account/_order_history.scss";
 @import "pages/account/customer_service/_store_locator.scss";
 @import "pages/account/customer_service/_landing.scss";
 
@@ -47,5 +48,7 @@
 
 // More Pages
 @import "pages/more/_more_base.scss";
-@import "pages/more/_rfl.scss";
 @import "pages/more/_faq.scss";
+@import "pages/more/_maps.scss";
+@import "pages/more/rewards_for_life/_rfl.scss";
+@import "pages/more/rewards_for_life/_rfl_faq.scss";
