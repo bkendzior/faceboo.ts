@@ -44,6 +44,6 @@ match($page_name) {
 // Global keep
 //   - Uncomment to keep all site scripts
 // ----------------
-//$("/html//script") {
-//  attribute("data-keep","true")
-//}
+#$("/html//script") {
+#  attribute("data-keep","true")
+#}

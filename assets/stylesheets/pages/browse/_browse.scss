@@ -91,6 +91,8 @@ body.mw-browse {
     // Grid View
     // ------------------
     &[mw_view='grid_view'] > div {
+      display: block;
+
       width: 45%;
       margin: 2%;
       display: inline-block;
@@ -134,7 +136,7 @@ body.mw-browse {
     // List View
     // ------------------
     &[mw_view='list_view'] { 
-      
+     display: block; 
      
       > div {
         &:first-child {

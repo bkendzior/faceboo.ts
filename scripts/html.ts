@@ -28,6 +28,6 @@ $("/html") {
   remove_desktop_js();
   
   # Late load all the images on the site
-  # lateload()
+  #lateload()
 }
 

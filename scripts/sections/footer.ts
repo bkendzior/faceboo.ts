@@ -52,13 +52,27 @@ $("./body//div[@id='container']"){
 
 
       // FAQ's
-      move_here("ancestor::div[@id='container']/div[@id='header']/ul/li/a/span[contains(text(),'FAQs')]/..") {
-        text() {
-          set("FAQ's")
-        }
-        $("./span") {
-          remove()
-        }
+      move_here("ancestor::div[@id='container']/a[contains(@id,'header-nav-faqs')]") {
+         text() {
+           set("FAQ's")
+         }
+         $("./span") {
+           remove()
+         }
+      }
+    }
+
+    insert_bottom("a", class:'mw-desktop_link') {
+      attribute("id", "mw_desktop_link")
+      inject("View Full Website")
+
+      insert("div") {
+        attribute("id", "mw_desktop_link_config")
+        attribute("matcher", $rewrite_incoming_matcher)
+        attribute("replacement", $rewrite_incoming_replacement)
+        attribute("cookie_hours", "0")
+        attribute("cookie_domain", ".hollandandbarrett.com")
+        attribute("rewriter_json", $rewrite_incoming_json)
       }
     }
 
@@ -82,8 +96,6 @@ $("./body//div[@id='container']"){
       }
 
     }
-
-
 
     // Remove everything that isn't prefixed with mw-
     $("./*[not(contains(@class,'mw-'))]") {

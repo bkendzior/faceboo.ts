@@ -245,6 +245,14 @@ match($status) {
         log_page('pages/more/more_base.ts', $curr_file)
         @import 'pages/more/more_base.ts'
       }
+
+
+      // Rewards for Life - Catchall
+      // Ex: '/rewardsforlife'
+      with(/rewardsforlife/) {
+        log_page('pages/more/more_base.ts', $curr_file)
+        @import 'pages/more/more_base.ts'
+      }
       // ------------------------------
       // ---------------------------------------------
       // PRODUCT & BROWSE PAGES

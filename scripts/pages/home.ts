@@ -3,7 +3,26 @@ $("./body") {
   
   // All the site content is in this div 
   $(".//div[@id='main']") {
-    // Carousel
+    
+    // Client Controlled Content
+    insert("script", type:"text/javascript", src:"http://www.puritan.com/Mobiledefault.asp?mobilebanner=true", data-keep:"true")
+
+    // Insert Carousel
+    insert_bottom("div", class:'mw_carousel_wrap') {
+      insert_bottom("div", class: 'mw_main_carousel', id: 'mw_main_carousel', data-ur-set:'carousel', data-ur-id:'mw_carousel') {
+        insert_bottom("div", data-ur-carousel-component: "view_container", id: "mw_view_container", data-ur-fill: "1", data-ur-autoscroll: "enabled", data-ur-autoscroll-delay: "4000", data-ur-infinite: "enabled", data-ur-android3d: "enabled") {
+          insert_bottom("div", id:"mw_carousel_scroll", data-ur-carousel-component:"scroll_container")
+        }
+        insert_bottom("div", data-ur-carousel-component: "dots")
+      }
+
+      insert_bottom("div", class: "mw_left_btn mw_c_btn", data-ur-id: "mw_carousel", data-ur-carousel-component: "button", data-ur-carousel-button-type: "prev") {
+        insert_bottom("div", class: "mw_btn_sprite", id: "mw_left_btn")
+      }
+      insert_bottom("div", class: "mw_right_btn mw_c_btn", data-ur-id: "mw_carousel", data-ur-carousel-component: "button", data-ur-carousel-button-type: "next") {
+        insert_bottom("div", class: "mw_btn_sprite")
+      }
+    }
 
     // Rewards for life box
     insert_bottom("div", class:'mw-rewards') {

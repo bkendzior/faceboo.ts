@@ -36,6 +36,5 @@ x$(document).on('DOMContentLoaded', function(){
         this.setAttribute("mw_view", "list_view");
       });
     });
-
   });
 });

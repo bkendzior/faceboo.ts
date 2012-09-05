@@ -79,7 +79,11 @@ $("./body//div[@id='container']"){
         }
       }
     }
-    
+
+    // Move out of the header so the footer can later pull it out
+    $(".//a[contains(@id,'header-nav-faqs')]") {
+      move_to("ancestor::div[@id='container']","top")
+    }
 
     // Remove everything that isn't prefixed with mw-
     $("./*[not(contains(@class,'mw-'))]") {
