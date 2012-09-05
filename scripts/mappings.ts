@@ -325,8 +325,8 @@ match($status) {
 
       // Map pages
       with(/pages\/mapstores\.asp/) {
-        #log_page('pages/more/maps.ts', $curr_file)
-        #@import 'pages/more/maps.ts'
+        log_page('pages/more/maps.ts', $curr_file)
+        @import 'pages/more/maps.ts'
       }
 
             
