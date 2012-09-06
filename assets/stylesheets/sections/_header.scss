@@ -12,7 +12,7 @@
 
       .icons-telephone {
         display: inline-block; 
-        margin-bottom: -2px;
+        margin-bottom: -3px;
       }
 
       a {
@@ -27,7 +27,7 @@
 
       .icons-basket {
         display: inline-block; 
-        margin-bottom: -2px;
+        margin-bottom: -3px;
       }
 
       span {
@@ -79,6 +79,7 @@
           position: absolute;
           top: 7px;
           left: 7px;
+          z-index: 1;
         }
     }
 
@@ -154,4 +155,8 @@
       }
     }
   }
+}
+
+#container > #header-nav-faqs {
+  display: none;
 }

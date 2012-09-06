@@ -91,7 +91,7 @@ $("./body//div[@id='container']"){
 
       wrap("div", class:'mw-copyright') {
         insert_bottom("a", class:"mw-rights", "All rights reserved.")
-        insert_bottom("a", class:'mw-powered_by_moovweb', href:'http://www.moovweb.com', "Powered by Moovweb")
+        insert_bottom("a", class:'mw-powered_by_moovweb', href:'http://www.moovweb.com', "Mobile Site Powered by Moovweb")
         move_to("..", "bottom")
       }
 

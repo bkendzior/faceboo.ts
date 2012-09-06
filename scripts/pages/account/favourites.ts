@@ -19,12 +19,22 @@ $("./body") {
       remove()
     }
 
-
-
-    // Add to basket, remove from favorites  
-    $(".//a[@class='bluebutton']") {
+    // Add to basket
+    $(".//a[@class='bluebutton'][1]") {
       add_class("mw_btn4 mw-account_btn")
       
+      move_to("./ancestor::div[1]", "before")
+      
+    }
+
+    // remove from favorites  
+    $(".//a[@class='bluebutton'][1]") {
+      add_class("mw_btn4 mw-account_btn")
+
+      $("./span") {
+        text("REMOVE")
+      }
+
       $("./ancestor::div[1]") {
         add_class("mw-trailer")
       }

@@ -6,11 +6,16 @@ body.mw-login {
   } 
   
   .loginButtonContainer {
-    margin: 15px 0;
+    margin: 15px 0 25px;
   }
 
   h1.mw_box1_head {
     color: #FFF;
     @include adjust-font-size-to($h2_size);
+    padding-left: 10px;
+    line-height: 1.5em;
+  }
+  input[name='action'] {
+    margin-left: 0;
   }
 }

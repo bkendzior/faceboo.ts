@@ -66,7 +66,11 @@ $("./body") {
     $("./div[@class='accountMain']") {
       // Green Button
       $(".//a[@class='greenbutton']") {
+      
         add_class("mw_btn3 mw-account_btn")
+
+        
+
         $("./ancestor::div[1]") {
           add_class("mw-trailer")
         }
@@ -88,6 +92,14 @@ $("./body") {
         $("./ancestor::div[1]") {
           add_class("mw-trailer")
         }
+      }
+
+      // Stopping the check boxes with left-aligning
+      $(".//label[@for='billing-mailoptin'][1]") {
+        remove()
+      }
+      $(".//label[@for='billing-optin'][1]") {
+        remove()
       }
     }
     

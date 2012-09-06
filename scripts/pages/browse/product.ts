@@ -120,7 +120,7 @@ $("./body") {
           $(".//div[@class='button-row']") {
             $("./div/a[1]") { 
               add_class("mw-fav_button") 
-              inject("ADD TO FAVORITES")
+              inject("ADD TO FAVOURITES")
             }
             $("./div/a[2]") {
               add_class("mw-cart_button")

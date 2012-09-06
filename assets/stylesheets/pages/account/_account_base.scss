@@ -71,11 +71,21 @@ body.mw-account_base {
         @include bar_chevron;
       }
     }
-    @include trailer(1);
   }
     
-  input[type='text'], input[type='password'], input[role='textbox'], select, textarea {
+  input[type='text'], input[type='password'], input[role='textbox'], textarea {
     @include singlecolumn_input;
+    @include trailer(.5);
+  }
+
+  select {
+    height: 24px; 
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    background-image: linear-gradient(top, #fff 0%, #ededed 100%);
+    color: $green;
+    @include trailer(.5);
   }
   
   .accountMain {

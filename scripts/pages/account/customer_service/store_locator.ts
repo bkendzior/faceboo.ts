@@ -11,6 +11,18 @@ $("./body") {
         attribute("href",$map_link)
       }
     }
-  
+  }
+
+  // Change "click here" to "tap here"
+  $(".//form[@id='locator']") {
+    $(".//p") {
+      wrap_text_children("a")
+
+      $("./a[1]") {
+        text() {
+          replace(/click/,"tap")
+        }
+      }
+    }
   }
 }

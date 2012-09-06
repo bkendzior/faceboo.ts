@@ -62,15 +62,15 @@ $("./body") {
             replace(/.*\s(\d+\sproducts).*/,"\\1")
           }
           wrap("div", class:"mw-list_grid") {
-            insert_top("div",id:"mw-grid_view")
-            insert_top("div",id:"mw-list_view")
+            insert_top("div",id:"mw-grid_view", active:"false")
+            insert_top("div",id:"mw-list_view", active:"true")
           }
         }
       }
 
       // Product List
       $(".//div[@class='grid_container']") {
-        attributes(id:"mw_main_item_wrapper")
+        attributes(id:"mw_main_item_wrapper", mw_view:"list_view")
         $("./div[contains(@class,'grid_box_')]") {
           $("./div[@class='grid_box_price']") {
             copy_to("..") {
@@ -81,6 +81,23 @@ $("./body") {
             }
           }
 
+          $("./div[@class='grid_box_buttons']") {
+            // More Info 
+            $("./p/a") {
+              add_class("mw-more_info")
+              inject("MORE INFO")
+
+              remove("./img")
+            }
+
+            // Add to cart
+            $("./a") {
+              add_class("mw-add_to_cart")
+              inject("ADD TO CART")
+              
+              remove("./img")
+            }
+          }
 
           // Review Stars
           $("./div[@class='grid_box_review']") {

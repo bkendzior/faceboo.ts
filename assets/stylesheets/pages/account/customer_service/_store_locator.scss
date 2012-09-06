@@ -3,6 +3,15 @@
   #DOMWindow {
     width: 90% !important;
   }
+    
+  select {
+    height: 24px; 
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    background-image: linear-gradient(top, #fff 0%, #ededed 100%);
+    color: $green;
+  }
 
   table.stores {
     

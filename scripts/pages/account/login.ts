@@ -3,6 +3,10 @@ $("./body") {
 
 
   $(".//div[@class='accountMain']") {
+    
+    $(".//label[@for='rememberme'][1]") {
+      remove()
+    }
 
     // Login Panels
     $(".//h1") {

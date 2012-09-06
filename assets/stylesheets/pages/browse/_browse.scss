@@ -1,4 +1,7 @@
 body.mw-browse {
+  .mw_h1 {
+    margin-left: 10px;
+  }
 
   #breadcrumb-left {
     * {
@@ -203,8 +206,25 @@ body.mw-browse {
           margin-top: -10px;
         }
 
-        .grid_box_buttons > *{
-          display: inline-block;
+        .grid_box_buttons{
+
+          .mw-add_to_cart {
+            display: inline-block;
+            @extend .mw_btn3;
+            padding: 5px; 
+          }
+
+          p {
+            display: inline-block;
+          }
+
+          .mw-more_info {
+            display: inline-block;
+            // NEED RED BTN STYLING HERE
+            @extend .mw_btn4;
+            background: red;
+            padding: 5px; 
+          }
         }
       }
     }
@@ -230,9 +250,9 @@ body.mw-browse {
         // Make prev & next buttons visible
         &.visible {
           display: inline-block;
-
           > a {
             @extend .mw_btn1;
+            font-weight: bold;
             padding: 10px;
           }
         }
@@ -248,6 +268,7 @@ body.mw-browse {
       display: inline-block;
       >a {
         @extend .mw_btn1;
+        font-weight: bold;
         padding: 10px;
       }
     }

@@ -30,10 +30,8 @@
       display: block;
       text-align: center;
       font-weight: normal;
-      // ------------------------------------- 
-      //@include adjust-font-size-to($emp_size);
-       font-size: $emp_size;
-      // ------------------------------------- 
+      line-height: $base_font_size;
+      font-size: $emp_size;
       color: $gray2;
       text-shadow: 0 1px 0 #fff;
     }
@@ -54,6 +52,7 @@
     font-weight: bold;
     color: $green;
     text-shadow: 0 1px 0 #fff;
+    line-height:1.75em;
 
     a {
       font-weight: bold;
