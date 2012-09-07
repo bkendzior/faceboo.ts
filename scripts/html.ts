@@ -25,7 +25,9 @@ $("/html") {
   
   # Remove all script tags not marked with "data-keep" attribute
   @import keep_desktop_js.ts
-  remove_desktop_js();
+
+  remove_desktop_js()
+  remove_doubleclick_iframe()
   
   # Late load all the images on the site
   lateload()

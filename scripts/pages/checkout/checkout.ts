@@ -1,3 +1,5 @@
+$curr_file = 'scripts/pages/checkout/checkout.ts'
+
 $("./body") {
   add_class("mw-checkout")
 

@@ -3,10 +3,6 @@
 log("Page Name Variable $page_name= "+ $page_name)
 
 match($page_name) {
-  // Home
-  with(/pages\/home\.ts/) {
-  
-  }
 
   // Store Locator
   with(/store\_locator\.ts/) {

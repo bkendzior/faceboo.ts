@@ -79,7 +79,7 @@ $("./body//div[@id='container']"){
 
       // Regex to extract the parts of the desktop footer that we want to keep
       text() {
-        replace(/^(.*HollandAndBarrett.*|.*Registered.*)$/, "")
+        replace(/^(.*HollandAndBarrett.*|.*Registered.*)$/i, "")
         replace(/All\srights\sreserved\./,"") 
         replace(/\s\s/,"")
       }

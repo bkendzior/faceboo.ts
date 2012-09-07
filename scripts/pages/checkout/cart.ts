@@ -1,3 +1,5 @@
+$curr_file = 'scripts/pages/checkout/cart.ts'
+
 $("./body") {
   add_class("mw-cart")
 

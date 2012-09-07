@@ -1,3 +1,5 @@
+$curr_file = "functions/main.ts"
+
 ####################
 ### Site Functions
 ####################
@@ -10,6 +12,20 @@
   }
 }
 
+// Removes the doubleclick script 
+// Doesn't run on account_base or more_base pages - doubleclick not there
+@func XMLNode.remove_doubleclick_iframe() {
+  // Sometimes a script writes the iFrame to the page
+  $("/html/body[not(contains(@class,'_base'))]//script[contains(text(),'doubleclick.net')]") {
+    remove()
+  }
+  // Other times the iFrame is already on the page
+  $("/html/body[not(contains(@class,'_base'))]//iframe[contains(@src,'doubleclick.net')]") {
+    remove()
+  }
+}
+
+// Removes 'clearer' divs from the page
 @func XMLNode.remove_clearer() {
   $("/html//div[@class='clearer']") {
     remove()

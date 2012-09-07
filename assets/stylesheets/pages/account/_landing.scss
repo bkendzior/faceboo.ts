@@ -25,6 +25,7 @@ body.mw-account_landing {
     // Why it matters - heading
     > a > span {
       @extend .mw_h2; 
+      padding-left: 10px;
     }
 
     .rfl-contents {
@@ -48,5 +49,4 @@ body.mw-account_landing {
       }
     }
   }
-
 }

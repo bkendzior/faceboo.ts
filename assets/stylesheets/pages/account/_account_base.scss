@@ -50,7 +50,6 @@ body.mw-account_base {
     border-bottom: 1px solid $gray1;
   }
 
-
   // Update Button spacing /account/personaldetails
   .login-half-panel:not(.login-panel) {
     .loginButtonContainer.mw-trailer{
@@ -72,6 +71,7 @@ body.mw-account_base {
         }
       } 
     }
+
     .navLinks {
       > li > a {
         margin: 0 10px;
@@ -95,7 +95,6 @@ body.mw-account_base {
     color: $green;
     @include trailer(.5);
   }
-  
   .accountMain {
     margin: 0 10px;
     
@@ -103,8 +102,6 @@ body.mw-account_base {
       @include adjust-font-size-to($h1_size);
       color: green;
     }
-
-    
 
     label {
       @include label;
@@ -129,6 +126,22 @@ body.mw-account_base {
   .mw_btn3, .mw_btn4 {
     padding: 10px;
   }
+
+  // All stores list
+  ul.allstores {
+    a {
+      @extend .mw_bar1;
+      &:after {
+        @extend .icons-chevron;
+        display: inline-block;
+        float: right;
+        position: relative;
+        top: 4px;
+        content: '';
+      }
+    }
+  }
+
 
   .mw-trailer {
     @include leader(1);

@@ -18,6 +18,7 @@ body.mw-browse {
 
     border-bottom: 1px solid $gray1;
   }
+
   .mw-list_grid {
     margin: 0 10px;
     @include leader(1);
@@ -41,7 +42,8 @@ body.mw-browse {
       &[active='false'] {
         @extend .icons-list1;  
       }
-    } 
+    }
+
     #mw-grid_view {
       &[active='true'] {
         @extend .icons-grid2;  

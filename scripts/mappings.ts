@@ -122,7 +122,6 @@ match($status) {
 
       // Account - Favourites  
       // Ex: '/account/personaldetails/favourites'
-      // TODO
       with(/\/account\/personaldetails\/favourites/) {
         log_page('pages/account/account_base.ts', $curr_file)
         @import pages/account/account_base.ts
@@ -133,7 +132,6 @@ match($status) {
 
       // Account - Favourites  
       // Ex: '/account/personaldetails'
-      // TODO
       with(/\/account\/personaldetails/) {
         log_page('pages/account/account_base.ts', $curr_file)
         @import pages/account/account_base.ts

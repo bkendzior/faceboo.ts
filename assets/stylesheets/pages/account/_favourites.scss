@@ -11,6 +11,7 @@ body.mw-favourites {
 
       div:nth-of-type(1) {
         float: left;
+        min-height: 200px;
         img {
           max-width: 75px;
           margin-right: 20px; 
@@ -46,7 +47,6 @@ body.mw-favourites {
 
   .mw-account_btn {
     white-space: nowrap;
+    margin-left: 95px;
   }
-
-  
 }

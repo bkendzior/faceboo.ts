@@ -1,3 +1,5 @@
+$curr_file = 'scripts/pages/checkout/basket.ts'
+
 $("./body") {
   add_class('mw-receipt')
 
