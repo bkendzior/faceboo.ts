@@ -260,12 +260,12 @@
 
 # This function lateloads all images and moves scripts to the bottom of the body, place function at end of html.ts
 @func XMLNode.lateload() {
-  $(".//script") {
-    #move_to("//html/body")
+  $(".//script[not(contains(@src,'main.js' ))]") {
+    #move_to("//html/body", "bottom")
   }
   $(".//img") {
     attribute("src") {
-      name("data-ur-ll-src")
+      #name("data-ur-ll-src")
     }
   }
 }

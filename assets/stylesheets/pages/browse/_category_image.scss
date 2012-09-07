@@ -20,6 +20,10 @@ body.mw-category_image {
     @extend .mw_h2;
   }
 
+  .mw_h2 {
+    padding: 0 10px; 
+  }
+
 
   .clickbox, .bannerl > a, .bannerr >a {
     display: block;
@@ -30,5 +34,10 @@ body.mw-category_image {
     div {
       top: -10px !important;
     }
+  }
+
+  // Removing the bottom border (made the footer separator look too big)
+  #main-box > div:last-of-type > a {
+    border-bottom: 0px;
   }
 }

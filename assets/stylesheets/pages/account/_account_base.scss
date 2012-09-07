@@ -50,13 +50,21 @@ body.mw-account_base {
     border-bottom: 1px solid $gray1;
   }
 
+
+  // Update Button spacing /account/personaldetails
+  .login-half-panel:not(.login-panel) {
+    .loginButtonContainer.mw-trailer{
+      @include padding-trailer(1);
+    }
+  }
+
   .mw-cust_serve {
     .header {
       text-align: center;
       margin: 10px;
       margin-bottom: 0px;
       > h2 {
-        @include bar_browsearrows;
+        @include bar_browsearrows_dark;
 
         > div.mw-arrow {
           top: -22px !important;
@@ -96,10 +104,17 @@ body.mw-account_base {
       color: green;
     }
 
-
+    
 
     label {
       @include label;
+
+      &.note.editItem{
+        display: block;
+        input {
+          margin-right: 10px;
+        }
+      }
 
       em {
         color: $red1;

@@ -2,10 +2,25 @@ body.mw-category_text {
 
   #breadcrumb-text {
     @include adjust-font-size-to(12px);
-    @include leader(.5);
+    padding: 0 5px;
+    @include padding-leader(.25);
+    @include padding-trailer(.25);
 
-    padding: 0 10px;
+    color: $gray1;
+
+    font-weight: bold;
+
+    border-bottom: 1px solid $gray1;
+    > a {
+      color: $gray1;
+      font-weight: normal;
+    }
   }
+
+  #page-content > h1 {
+    padding-left: 10px;
+  }
+
 
   .category-heading {
     @include bar_plus_minus;

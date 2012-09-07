@@ -67,6 +67,7 @@ body.mw-faq {
       // Content
       .infocenter-content {
         @include adjust-font-size-to($base_font_size);
+        margin-bottom: 0px;
         b {
           @extend .mw_h2;
           padding: 20px 0 10px;

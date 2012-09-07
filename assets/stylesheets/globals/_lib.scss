@@ -153,6 +153,24 @@ $h3_color: $color3;
   }
 }
 
+@mixin bar_browsearrows_dark {
+  &[data-ur-state="disabled"] > div:last-of-type {
+    @extend .icons-darkarrow_down;
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: -12px;
+  }
+
+  &[data-ur-state="enabled"] > div:last-of-type {
+    @extend .icons-darkarrow_up;
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: -15px;
+  }
+}
+
 @mixin bar_chevron {
   & > div:last-of-type {
     @extend .icons-chevron;
@@ -316,6 +334,18 @@ $h3_color: $color3;
   @include adjust-font-size-to($base_font_size);
 }
 
+@mixin btn5 {
+  @include border-radius(3px);
+  background-color: #8a1613;
+  @include box-shadow(inset 0 1px rgba(255,255,255,.5));
+  border: solid 1px #991a1c;
+  @include background-image(linear-gradient(bottom, #cc2326, #e6262a));
+  text-shadow: 0 -1px #b31e21;
+  color: #FFF;
+  text-transform: uppercase;
+  @include adjust-font-size-to($base_font_size);
+}
+
 .mw_btn1 {
   @include btn1;
 }
@@ -330,6 +360,10 @@ $h3_color: $color3;
 
 .mw_btn4 {
   @include btn4;
+}
+
+.mw_btn5 {
+  @include btn5;
 }
 // boxes
 
@@ -360,14 +394,19 @@ $h3_color: $color3;
     position: relative;
 
     input[type='text'] {
-      @include box-flex(1);
+      border: 1px solid #dbdbdb;
+      background-color: #fff;
+      box-shadow: inset 0 0 3px rgba(0,0,0,.25); @include box-flex(1);
       @include border-radius(0px);
-      @include border-left-radius(3px);
       display: block;
       margin-top: 1px;
       margin-right: 0px;
       height: 20px;
     } // mw_text_input
+
+    input[type='submit'] {
+      @include border-radius(0px);
+    }
   } // close form
 }
 

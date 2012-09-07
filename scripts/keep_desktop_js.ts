@@ -34,7 +34,7 @@ match($page_name) {
     
   // PRODUCT PAGES 
   with(/browse\/product/) {
-    $("/html//script[contains(@src,'bvapi')]") {
+    $("/html//script[contains(@data-ur-ll-src,'bvapi') or contains(@src,'bvapi') ]") {
       attribute("data-keep","true")
     } 
   }

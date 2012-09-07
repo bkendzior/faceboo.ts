@@ -5,6 +5,12 @@ $("./body") {
   $(".//div[@class='accountMain']") {
     $("./table") {
 
+      $(".//th") {
+        attribute("colspan") {
+          remove()
+        }
+      }
+
       $(".//td/a") {
         text() {
           replace(/(\sdetails|>)/,"")

@@ -5,7 +5,14 @@ body.mw-order_history {
   }
 
   tr {
+    &.pager {
+      th{
+        margin: 10px;  
+      }
+    }
+
     td {
+      padding: 5px;
       padding-right: 10px;
     }
   }

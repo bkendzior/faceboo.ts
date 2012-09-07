@@ -66,10 +66,13 @@ $("./body") {
     $("./div[@class='accountMain']") {
       // Green Button
       $(".//a[@class='greenbutton']") {
-      
         add_class("mw_btn3 mw-account_btn")
 
-        
+        $("./span[contains(text(),'Back to My Account')]") {
+          text() {
+            prepend("« ")
+          }
+        }
 
         $("./ancestor::div[1]") {
           add_class("mw-trailer")
@@ -100,6 +103,11 @@ $("./body") {
       }
       $(".//label[@for='billing-optin'][1]") {
         remove()
+      }
+
+      // Making the check boxes be on the same line as the label
+      $(".//form[@id='billing' or @id='shipping']/input[@type='checkbox']") {
+        move_to("following-sibling::label[contains(@class,'editItem')][1]", "top")
       }
     }
     

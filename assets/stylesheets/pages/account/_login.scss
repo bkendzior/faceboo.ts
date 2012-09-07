@@ -14,6 +14,7 @@ body.mw-login {
     @include adjust-font-size-to($h2_size);
     padding-left: 10px;
     line-height: 1.5em;
+    @include leader(1);
   }
   input[name='action'] {
     margin-left: 0;

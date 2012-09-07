@@ -1,4 +1,8 @@
 body.mw-product {
+  .mw-bazaar {
+    display: none;
+  }
+  
   #breadcrumb-left {
     * {
       display: inline-block;
@@ -102,6 +106,7 @@ body.mw-product {
     // Product Title
     #info-product {
       @extend .mw_h1; 
+      padding-left: 10px;
       color: $green;
     }
 
@@ -160,10 +165,12 @@ body.mw-product {
         }
         .mw-cart_button {
           @extend .mw_btn3; 
-          padding: 5px;
+          padding: 3.5px;
           text-align: center;
-          
-          margin-left: 20px;
+          position: relative;
+          float: right;
+          bottom: 5px;
+
           > img { display: none; }
         }
       }
@@ -197,6 +204,13 @@ body.mw-product {
         display: block;
         font-weight: bold;
       }
+      #prod-detail-label {
+        width: 100%;
+      }
+      td {
+        @include adjust-font-size-to($base_font_size);
+        line-height: 1.8em;
+      }
     }
     .bold {
       font-weight: bold;
@@ -215,6 +229,11 @@ body.mw-product {
     .mw-reviews_button {
       @extend .mw_bar1;
       @include bar_plus_minus;
+
+      // Bottom border when button is closed makes the footer separator look too big
+      &[data-ur-state='disabled'] {
+        margin-bottom: 0px;
+      }
     }
     .BVBrowserWebkit {
       margin: 0 10px;
@@ -236,8 +255,13 @@ body.mw-product {
     width: 100% !important;
   }
 
+  a[title='write a review'] {
+    position: relative;
+    z-index: -10;
+  }
+
   // Bazaar Voice
-  .BVRRRatingsHistogramButton, .BVRRRatingSummaryLinks, #BVRRRatingSummaryLinkWriteFirstID {
+  #BVRRDisplayContentHeaderID, .BVRRRatingsHistogramButton, .BVRRRatingSummaryLinks, #BVRRRatingSummaryLinkWriteFirstID, #BVRRDisplayContentNoReviewsID {
     display: none;
   }
   .BVRRRatingContainerStar, #BVRRRatingSummaryNoReviewsWriteImageLinkID {

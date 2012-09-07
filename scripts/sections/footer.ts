@@ -29,28 +29,23 @@ $("./body//div[@id='container']"){
         } 
       }
 
-      // Shipping & returns
-      move_here("ancestor::div[@id='footer']/div[@class='footer-links']/ul/li/a[contains(text(),'Shipping And Returns')]") {
-        text() {
-          set("Shipping & returns")
-        } 
-      }
-    }
-
-    // Contact us | Site feedback | FAQ's
-    insert_bottom("div", class:"mw-contact_footer_bar") {
       // Contact us 
       move_here("ancestor::div[@id='footer']/div[@class='footer-links']/ul/li/a[contains(text(),'Contact Us')]") {
         text() {
           set("Contact us")
         } 
       }
+    }
 
-      // Site feedback 
-      // -- had to hardcode it because link doesn't appear on cart pages etc...
-      insert_bottom("a", class:"mw-site_feedback", href:'/account/personaldetails/newsletter', "Site feedback")
-
-
+    // Contact us | Site feedback | FAQ's
+    insert_bottom("div", class:"mw-contact_footer_bar") {
+      // Shipping & returns
+      move_here("ancestor::div[@id='footer']/div[@class='footer-links']/ul/li/a[contains(text(),'Shipping And Returns')]") {
+        text() {
+          set("Shipping & returns")
+        } 
+      }
+        
       // FAQ's
       move_here("ancestor::div[@id='container']/a[contains(@id,'header-nav-faqs')]") {
          text() {

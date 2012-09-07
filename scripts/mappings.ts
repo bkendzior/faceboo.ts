@@ -288,11 +288,30 @@ match($status) {
         @import  'pages/browse/category_text.ts'
       }
 
-      // Search - No Matches
-      // Ex: '/pages/iq.asp?SearchText=vinp'
-      with (/iq\.asp\?SearchText/) {
-        log_page('pages/browse/category_text.ts', $curr_file)
-        @import  'pages/browse/category_text.ts'
+      // Search Landing
+      with (/iq\.asp/) {
+        $no_results = 'false';
+
+        // No search results
+        // Ex: '/pages/iq.asp?SearchText=vinp'
+        $("/html/body//div[@id='page-content']/p[@class='error-alert']/ancestor::html") {
+          $no_results = 'true';
+          
+          log_page('pages/browse/category_text.ts', $curr_file)
+          @import  'pages/browse/category_text.ts'
+        }
+
+        // Search results
+        // Ex: '/pages/iq.asp?SearchText=mix'
+        match($no_results,/false/) {
+          log_page('pages/browse/browse.ts', $curr_file)
+          @import  'pages/browse/browse.ts'
+
+          // Remove matching brands and matching categories
+          $("/html/body//div[@class='textcontainer']/div[@id='page-content']/*[not(position() = 1)]") {
+            remove()
+          }
+        }
       }
 
       // ------------------------------

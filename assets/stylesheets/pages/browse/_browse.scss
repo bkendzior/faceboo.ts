@@ -61,7 +61,7 @@ body.mw-browse {
   }
 
   // Page title
-  #page-title-cat, .textcontainer > h1{
+  #page-title-cat, .textcontainer > h1, #page-content > h1{
     color: $green;
     @extend .mw_h1;
   }
@@ -114,6 +114,7 @@ body.mw-browse {
         
         img {
           padding: 10px;
+          height: 180px
         }
 
         .grid_cust_fav {
@@ -127,6 +128,8 @@ body.mw-browse {
           color: #333;
         }
         @include box-shadow(0 -1px 0 #ddd, inset 0 1px 0 #fff);
+        height: 35px;
+        overflow: hidden;
       }
       .grid_box_gprice{
         display: block;
@@ -220,8 +223,7 @@ body.mw-browse {
 
           .mw-more_info {
             display: inline-block;
-            // NEED RED BTN STYLING HERE
-            @extend .mw_btn4;
+            @extend .mw_btn5;
             background: red;
             padding: 5px; 
           }

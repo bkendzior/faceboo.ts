@@ -29,10 +29,10 @@ $("./body") {
 
     // remove from favorites  
     $(".//a[@class='bluebutton'][1]") {
-      add_class("mw_btn4 mw-account_btn")
+      add_class("mw_btn5 mw-account_btn")
 
       $("./span") {
-        text("REMOVE")
+        text("REMOVE FROM FAVOURITES")
       }
 
       $("./ancestor::div[1]") {

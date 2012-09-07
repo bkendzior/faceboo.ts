@@ -1,3 +1,13 @@
+// Lateload Bazaar Voice inline script
+$(".//script[contains(text(),'$BV')]") {
+  attribute("class","mw-bazaar")
+  text() {
+    append("});")
+    prepend("x$(document).on('DOMContentLoaded', function(){")
+  }
+  move_to("/html/body","bottom")
+}
+
 $("./body") {
   add_class("mw-product")
 
@@ -14,12 +24,12 @@ $("./body") {
             move_to("../..", "top")
           }
         }
-        $("./span[contains(@class,'blue')]") {
+        $("./*[contains(@class,'blue')]") {
           $("./a") {
             move_to("../..", "top")
           }
           text() {
-            replace(/>/,"»")
+            replace(/(>\s*>*)/,"»")
           }
         }
       }
