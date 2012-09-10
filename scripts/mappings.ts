@@ -132,7 +132,7 @@ match($status) {
 
       // Account - Favourites  
       // Ex: '/account/personaldetails'
-      with(/\/account\/personaldetails/) {
+      with(/\/account\/personaldetails/i) {
         log_page('pages/account/account_base.ts', $curr_file)
         @import pages/account/account_base.ts
       } 
