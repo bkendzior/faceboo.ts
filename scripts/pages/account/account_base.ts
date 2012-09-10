@@ -117,5 +117,4 @@ $("./body") {
       move_to("ancestor::div[@id='main']//div[@class='mw-breadcrumb']","bottom")
     }
   } 
-
 }

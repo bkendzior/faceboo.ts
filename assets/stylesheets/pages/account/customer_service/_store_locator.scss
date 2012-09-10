@@ -15,7 +15,8 @@
   }
 
   table.stores {
-    
+    width: 100%;
+
     thead {
       @extend .mw_box1_head;
       @include adjust-font-size-to($h3_size);
