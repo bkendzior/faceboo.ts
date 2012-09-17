@@ -20,7 +20,7 @@ match($page_name) {
       attribute("data-keep","true")
     } 
   }  
-    
+
   // CHECKOUT 
   with(/checkout/) {
     $("/html//script[contains(@src,'jquery')]") {

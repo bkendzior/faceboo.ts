@@ -103,6 +103,12 @@ body.mw-account_base {
       color: green;
     }
 
+    .blurb {
+      p:first-of-type {
+        @include trailer(1); 
+      } 
+    }
+
     label {
       @include label;
 
@@ -146,5 +152,20 @@ body.mw-account_base {
   .mw-trailer {
     @include leader(1);
     @include trailer(1);
+  }
+
+  #newsletter > h2 {
+    line-height: 1.5em;
+    @include trailer(.5);
+  }
+  
+  // Jira#10
+  .whybother {
+    list-style-type: disc; 
+    list-style-position: inside;
+    @include trailer(1);
+    li {
+      padding-left: 10px;
+    }
   }
 }

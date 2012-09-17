@@ -34,7 +34,10 @@ $("./body") {
       // Bodybuilding
       $("./div[@id='main-box']") {
         $(".//img") {
-          $alt_text = fetch("@alt")
+          $alt_text = fetch("@alt") {
+            replace(/\,/,"") // HB-12
+          }
+
           $("..") {
             inject($alt_text)
             insert_bottom("div")

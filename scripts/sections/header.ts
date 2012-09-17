@@ -60,18 +60,7 @@ $("./body//div[@id='container']"){
       
       insert_bottom("div", class:'mw-browse_contents') {
         attributes(data-ur-toggler-component:"content", data-ur-state:"disabled")
-        //Vitamin Supplements
-        move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-multivits']")
-        //Food & drink
-        move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-food']")
-        //Sports nutrition
-        move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-bodybuild']")
-        //Weight loss
-        move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-diet']")
-        //Toileteries
-        move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-toilet']")
-        //Offers
-        move_here("./ancestor::div[@id='header']/ul[@class='header-nav']/li/a[@id='header-nav-pom']")
+        move_here("./ancestor::div[@id='header']/ul[@class='header-nav'][2]/li/a")
 
         $("./a") {
           insert_bottom("div", class:'mw-chevron')

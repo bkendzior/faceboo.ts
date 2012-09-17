@@ -49,7 +49,7 @@ $("./body//div[@id='container']"){
       // FAQ's
       move_here("ancestor::div[@id='container']/a[contains(@id,'header-nav-faqs')]") {
          text() {
-           set("FAQ's")
+           set("FAQs")
          }
          $("./span") {
            remove()

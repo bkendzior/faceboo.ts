@@ -54,9 +54,7 @@ $("./body") {
       
         // Find out More
         insert_bottom("div") {
-          move_here("ancestor::div[@id='main']//div[@id='cat-box3']/h3/div/a[position()=last()]") {
-            text("Find out more") 
-          }
+          move_here("ancestor::div[@id='main']//div[@id='cat-box8']/h4/a")
         }
       }
     }

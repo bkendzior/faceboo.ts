@@ -18,9 +18,29 @@ body.mw-rfl {
       }
     }
 
-    #loyalty-landing-box-text-wide {
+    .mw-cart_landing, .mw-mouse_landing {
       @include leader(1);
+
+      img {
+        float:left;
+        display: block;
+        padding-right: 10px;
+        padding-bottom: 30px;
+      } 
     }
+
+    .mw-loyaltyLandingItem {
+      margin: 0 -10px;
+      @include bar_chevron;
+
+      > div.mw-chevron {
+        top: -10px; 
+      }
+
+      &:nth-of-type(1) {
+        @include leader(1);
+      }
+    } 
 
     #loyalty-landing-links { 
       @include leader(1);

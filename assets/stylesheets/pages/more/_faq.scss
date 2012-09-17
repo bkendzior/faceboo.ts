@@ -25,15 +25,15 @@ body.mw-faq {
 
       // Infocenter Navigation
       .infocentrenav {
-       > p.infocenter-navlist > a {
-          display: block;
-          @extend .mw_bar4;
-          background-image: none;
-          padding: 5px;
-          @include leader(1);
-       }
+         span.info-header {
+            display: block;
+            @extend .mw_bar4;
+            background-image: none;
+            padding: 5px;
+            @include leader(1);
+         }
         
-        > a {
+        > a:not(.mw-heading) {
           display: block;
           @extend .mw_bar1;
           @include bar_chevron;
@@ -51,7 +51,10 @@ body.mw-faq {
       // Header
       .infocenter-header {
         .faq-top-of-page {
-          display: none;
+          font-size: $emp_size;
+          color: $gray1;
+          display: block;
+          text-align: right;
         } 
 
         .infocenter-title {

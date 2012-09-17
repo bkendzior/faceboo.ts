@@ -71,12 +71,6 @@ body.mw-more_base {
         @include leader(1);
      }
       
-      > a {
-        display: block;
-        @extend .mw_bar1;
-
-      } 
-
       div.mw-arrow_icon {
         top: -10px !important;
       }

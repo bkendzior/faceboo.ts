@@ -88,7 +88,6 @@ match($status) {
         log_page('pages/account/account_base.ts', $curr_file)
         @import pages/account/account_base.ts
       }
-
       // Account - Order History
       // Ex: '/account/personaldetails/orderhistory'
       with(/\/account\/personaldetails\/order(history|details)/) {
@@ -137,6 +136,15 @@ match($status) {
         @import pages/account/account_base.ts
       } 
 
+      // Qualified to Advise 
+      // Ex: '/advice/qualified-to-advise'
+      with(/\/advice\/qualified-to-advise/) {
+        log_page('pages/account/account_base.ts', $curr_file)
+        @import pages/account/account_base.ts
+
+        log_page('pages/more/qualified.ts', $curr_file)
+        @import pages/more/qualified.ts
+      }
 
       // ------------------------------
       // ---------------------------------------------

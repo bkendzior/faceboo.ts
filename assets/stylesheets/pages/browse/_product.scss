@@ -184,6 +184,10 @@ body.mw-product {
       @include trailer(1);
 
       color: black;
+      > b {
+        display: block;
+        font-weight: bold;
+      }
     }
   }
   
