@@ -285,3 +285,32 @@ $curr_file = "functions/main.ts"
     }
   }
 }
+
+# Add mobile SEO requirements
+@func XMLNode.add_mobile_seo() {
+  # Inject a canonical link as long as there isn't already one. 
+  %canonical_found = "false"
+  $(".//link[@rel='canonical']") {
+    %canonical_found {
+      replace(/.*/, "true")
+    }
+  }
+  match(%canonical_found) {
+    with(/false/i) {
+      %link = "://" + $source_host + $path
+      match($secure) {
+        with(/true/i) {
+          %link {
+            prepend("s")
+          }
+        }
+      }
+      %link {
+        prepend("http")
+      }
+      $("/html/head") {
+        insert("link", rel: "canonical", href: %link)
+      }
+    }
+  }
+} 

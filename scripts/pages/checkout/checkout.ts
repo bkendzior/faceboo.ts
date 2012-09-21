@@ -42,6 +42,19 @@ $("./body") {
       $("./form/div[@id='basket']") {
         $("./div[@class='subtotal-row']") { // Subtotal
           wrap("div", class:"mw-total_row") {
+            move_here("ancestor::div[@id='checkout-main']/form[@id='rfl']//span[contains(@class,'rfl-rebate-amount')]") { // Voucher Amount 
+              // Voucher Price
+              $voucher_amnt = fetch("text()") {
+                replace(/Your\ Voucher\:\ /,"")
+                prepend("- ")
+              }
+
+              // Voucher Label
+              text() {
+                replace(/\£\d*\.\d*$/,"")
+              }
+              insert_bottom("a", class:"mw_voucher_amnt", $voucher_amnt) 
+            } 
             move_here("../div[contains(@class,'shipping-row')]") // Shipping
             move_here("../div[contains(@class,'finaltotal-row')]") // Final Total
             move_here("../div[contains(@class,'free-ship-message')]") // Final Total

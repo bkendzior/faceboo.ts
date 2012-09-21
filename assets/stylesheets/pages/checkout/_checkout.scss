@@ -160,6 +160,10 @@ body.mw-checkout {
           color: $gray1;
         }
 
+        .coupon-box {
+          margin: 0 10px;
+        }
+
         .mw-total_row {
           margin: 0 10px;
           
@@ -183,6 +187,14 @@ body.mw-checkout {
             } 
           }
          
+          .rfl-rebate-amount {
+            color: $gray1;
+
+            a.mw_voucher_amnt {
+              float: right;
+            }
+          }
+
           // Total
           .finaltotal-row {
             @include adjust-font-size-to($h2_size);

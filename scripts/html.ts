@@ -11,6 +11,9 @@ $("/html") {
   remove_html_comments()
   insert_mobile_meta_tags()
   
+  # SEO
+  add_mobile_seo()
+
   add_assets()
 
   remove_clearer() // Removes clearer div
