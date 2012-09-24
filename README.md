@@ -7,11 +7,17 @@ See detailed Manhattan docs at http://beta.moovweb.com
   127.0.0.1 	mlocal.www.hollandandbarrett.com
 
 ## Deploy
-  Run the below commands once to add the remotes.
-    git remote add moovstage moov@git.moovweb.com:hollandandbarrett/stage.git
-    git remote add moovprod moov@git.moovweb.com:hollandandbarrett/prod.git
+Run the below commands once to add the remotes.
+  git remote add moovstage moov@git.moovweb.com:hollandandbarrett/stage.git
+  git remote add moovprod moov@git.moovweb.com:hollandandbarrett/prod.git
 
-  To push to these repos, use the following commands
+To push to these repos, use the following commands
+  $ git tag 
+  $ git tag -a 0.1.1 -m "version 0.1.1, the next one is 0.1.2, got tickets and other items are all working" 
+  $ git push origin master --tags 
+  $ git checkout :tag-number 
+  $ git push moovstage
+
   Stage: git push moovstage master
   Prod: git push moovprod master 
 
