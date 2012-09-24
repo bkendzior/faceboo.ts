@@ -1,0 +1,44 @@
+// Site-wide styles go here
+// What shouldn't go here
+//   - global declartive classes, mixins, or variables, that goes in -lib.scss
+
+html {
+  height: 100%;
+  overflow: auto !important;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+  font-family: arial;
+  background: #fff;
+  color: #333;
+  position: relative;
+  min-height: 100%;
+}
+
+
+a {
+  font-family: arial;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+
+a, a:link {
+  -webkit-tap-highlight-color: rgba(225, 244, 204, 0.5);
+}
+
+img {
+  max-width: 100%;
+}
+
+input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+}
+
+br {
+  display: none;
+}
+
+.clearer {
+  display: none !important;
+}
