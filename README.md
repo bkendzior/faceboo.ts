@@ -6,6 +6,15 @@ See detailed Manhattan docs at http://beta.moovweb.com
   127.0.0.1 	mlocal.hollandandbarrett.com
   127.0.0.1 	mlocal.www.hollandandbarrett.com
 
+## Deploy
+  Run the below commands once to add the remotes.
+    git remote add moovstage moov@git.moovweb.com:hollandandbarrett/stage.git
+    git remote add moovprod moov@git.moovweb.com:hollandandbarrett/prod.git
+
+  To push to these repos, use the following commands
+  Stage: git push moovstage master
+  Prod: git push moovprod master 
+
 ## Accounts
 email: brian.kendzior@moovweb.com
 password: m00vw3b
