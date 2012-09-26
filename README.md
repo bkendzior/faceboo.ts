@@ -15,11 +15,11 @@ To push to these repos, use the following commands
   $ git tag 
   $ git tag -a 0.1.1 -m "version 0.1.1, the next one is 0.1.2, got tickets and other items are all working" 
   $ git push origin master --tags 
-  $ git checkout :tag-number 
+  $ git checkout tag-number 
   $ git push moovstage
 
-  Stage: git push moovstage master
-  Prod: git push moovprod master 
+  Stage: git push moovstage
+	Prod: git push moovprod 
 
 ## Accounts
 email: brian.kendzior@moovweb.com
