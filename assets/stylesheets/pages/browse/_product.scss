@@ -69,7 +69,13 @@ body.mw-product {
         font-weight: bold;
       }
 
+      #oos-message {
+        @include leader(1);
+      }
+
       #info-main-prod-buy-now {
+        @include leader(1);
+
         // Low stock, hide it
         > img { display: none; }
 

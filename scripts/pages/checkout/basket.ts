@@ -36,6 +36,9 @@ $(".//table[@id='basket']") {
     // Quantity
     $("./div[@class='basket-item-quantity']") {
       insert_top("a", class:'mw-label', "Quantity") 
+      $("./input") {
+        attributes(onkeydown:"if (event.keyCode == 13) { this.form.submit(); return false;}", type:"number")
+      }
     }
 
     // RRP
@@ -63,6 +66,10 @@ $(".//table[@id='basket']") {
       $("./a") {
         add_class("icons-trash") 
         remove("./img")
+        $href = fetch("@href")
+      }
+      insert_bottom("a", href: $href, class:'mw-remove_text') {
+        inject("Remove")
       }
       move_to("../div[@class='basket-item-quantity']","bottom")
     }

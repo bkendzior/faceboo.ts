@@ -44,9 +44,15 @@ body.mw-favourites {
       }
     }
   }
-
   .mw-account_btn {
     white-space: nowrap;
-    margin-left: 95px;
+    float: right;
+  }
+  .mw-btn_spacer {
+    height: 35px;
+  }
+
+  .mw-nofloat {
+    float: none;
   }
 }

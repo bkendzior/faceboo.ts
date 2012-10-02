@@ -21,24 +21,30 @@ $("./body") {
 
     // Add to basket
     $(".//a[@class='bluebutton'][1]") {
-      add_class("mw_btn4 mw-account_btn")
-      
+      add_class("  ")
+
+      $("./span") {
+        add_class("mw_btn4 mw-account_btn")
+      } 
+
       move_to("./ancestor::div[1]", "before")
-      
+      wrap("div", class:"mw-btn_spacer")
     }
 
     // remove from favorites  
     $(".//a[@class='bluebutton'][1]") {
-      add_class("mw_btn5 mw-account_btn")
 
       $("./span") {
+        add_class("mw_btn4 mw-account_btn")
         text("REMOVE FROM FAVOURITES")
       }
 
       $("./ancestor::div[1]") {
-        add_class("mw-trailer")
+        add_class("mw-btn_spacer")
       }
     }
   }
-
+  $(".//a[contains(@class,'greenbutton')]") {
+    add_class("mw-nofloat")
+  }
 }

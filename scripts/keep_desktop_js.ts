@@ -1,6 +1,6 @@
 // 1. Match a specific page to keep the JS on
 // 2. Add data-keep='true' to keep a specific js file
-log("Page Name Variable $page_name= "+ $page_name)
+#log("Page Name Variable $page_name= "+ $page_name)
 
 match($page_name) {
 
@@ -13,10 +13,7 @@ match($page_name) {
   
   // Maps - Store Locator
   with(/maps\.ts/) {
-    $("/html//script[contains(@src,'jquery')]") {
-      attribute("data-keep","true")
-    } 
-    $("/html//script[contains(@src,'google')]") {
+    $("/html//script") {
       attribute("data-keep","true")
     } 
   }  

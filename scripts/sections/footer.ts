@@ -82,6 +82,7 @@ $("./body//div[@id='container']"){
         replace(/^(.*HollandAndBarrett.*|.*Registered.*)$/i, "")
         replace(/All\srights\sreserved\./,"") 
         replace(/\s\s/,"")
+        replace(/\.\sis\sa\strading\sname\sofHolland\s\&\sBarrett\sRetail\sLimited\,\./,"") 
       }
 
       wrap("div", class:'mw-copyright') {

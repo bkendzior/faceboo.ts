@@ -1,3 +1,19 @@
 body.mw-more_maps {
-  width: 200px;  
+
+  #map_canvas {
+    width: 320px !important;
+    height: 320px !important;
+  }
+
+  .storeAddress {
+    b {
+      font-weight: bold;
+    }
+
+    br {
+      display: block;
+    }
+
+    @include leader(1); 
+  }
 }

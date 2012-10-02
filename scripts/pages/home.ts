@@ -5,20 +5,20 @@ $("./body") {
   $(".//div[@id='main']") {
     
     // Client Controlled Content
-    #insert("script", type:"text/javascript", src:"http://www.puritan.com/Mobiledefault.asp?mobilebanner=true", data-keep:"true")
+    #insert("script", type:"text/javascript", src:"http://www.hollandandbarrett.com/Mobiledefault.asp?mobilebanner=true", data-keep:"true")
 
     // Insert Carousel
     insert_bottom("div", class:'mw_carousel_wrap') {
       insert_bottom("div", class: 'mw_main_carousel', id: 'mw_main_carousel', data-ur-set:'carousel', data-ur-id:'mw_carousel') {
         insert_bottom("div", data-ur-carousel-component: "view_container", id: "mw_view_container", data-ur-fill: "1", data-ur-autoscroll: "enabled", data-ur-autoscroll-delay: "4000", data-ur-infinite: "enabled", data-ur-android3d: "enabled") {
           insert_bottom("div", id:"mw_carousel_scroll", data-ur-carousel-component:"scroll_container") {
-            // TEMPORARY
+            // TEMPORARY -> Delete hb-frame-1.jpg when removing this section
             attributes(href:"/pages/product.asp?sid=2")
             attribute("style","display:block")
             insert("a", href:"/pages/product.asp?sid=2") {
               insert("img", class:"mw_placeholder_img", src: asset("images/hb-frame-1.jpg"))
             }
-            // TEMPORARY
+            // TEMPORARY -> Delete hb-frame-1.jpg when removing this section
           }
         }
         insert_bottom("div", data-ur-carousel-component: "dots")

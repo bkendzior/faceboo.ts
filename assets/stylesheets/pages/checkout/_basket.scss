@@ -92,8 +92,13 @@
     // Trash icon
     .basket-item-remove {
       float: right;
-      > a {
+      > a:not(.mw-remove_text) {
         display: inline-block;
+        margin-left:15px;
+      }
+      .mw-remove_text {
+        display:block;
+        color: $red1;
       }
     }
 
