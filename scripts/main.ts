@@ -24,5 +24,8 @@ match($content_type) {
   }
   else() {
     log(concat("Passing through ", $content_type, " unmodified"))
+
+    log("Enabling Varnish caching on non-js asset")
+    export("Cache-Time", "12000")
   }
 }
