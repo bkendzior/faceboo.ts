@@ -31,6 +31,13 @@ match($page_name) {
       attribute("data-keep","true")
     } 
   }
+
+  // ORDER RECEIPT
+  with(/(receipt|basket)/) {
+    $("/html//script") {
+      attribute("data-keep","true")
+    }
+  }
 }
 
 // ----------------

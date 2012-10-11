@@ -65,8 +65,11 @@ $("./body") {
               move_to("../p[@id='info-main-prod-buy-now']", "top")
             }
 
-            $("./p[@id='info-main-prod-buy-now']/a") {
+            $("./p[@id='info-main-prod-buy-now']/a[not(contains(@class,'instore-only' ))]") {
               inject("ADD TO CART")
+            }
+            $("./p[@id='info-main-prod-buy-now']/a[contains(@class,'instore-only')]") {
+              text() { replace(/.*/,"IN STORE ONLY") }
             }
             // Product #
             $("./p[@id='info-sku']") {
