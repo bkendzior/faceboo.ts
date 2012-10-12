@@ -1,59 +1,48 @@
-## Basics
-This project works with the MoovwebSDK
-See detailed Manhattan docs at http://beta.moovweb.com
+##   _____                   ___.                         __          
+## _/ ____\____    ____  ____\_ |__   ____   ____       _/  |_  ______
+## \   __\\__  \ _/ ___\/ __ \| __ \ /  _ \ /  _ \      \   __\/  ___/
+##  |  |   / __ \\  \__\  ___/| \_\ (  <_> |  <_> )      |  |  \___ \ 
+##  |__|  (____  /\___  >___  >___  /\____/ \____/   /\  |__| /____  >
+##             \/     \/    \/    \/                 \/            \/ 
+This is faceboo.ts - a FacebookSDK javascript wrapper for tritium
 
-## Domains
-  127.0.0.1 	mlocal.hollandandbarrett.com
-  127.0.0.1 	mlocal.www.hollandandbarrett.com
+## Access 
+This project can be run from faceboots.hazasite.com - Ideally on a mobile
+device or simulator
 
-## Deploy
-Run the below commands once to add the remotes.
-  git remote add moovstage moov@git.moovweb.com:hollandandbarrett/stage.git
-  git remote add moovprod moov@git.moovweb.com:hollandandbarrett/prod.git
+## Demo Features 
+Header of every page - Login/Logout w/ user name and photo
 
-To push to these repos, use the following commands
-  $ git tag 
-  $ git tag -a 0.1.1 -m "version 0.1.1, the next one is 0.1.2, got tickets and other items are all working" 
-  $ git push origin master --tags 
-  $ git checkout tag-number 
-  $ git push moovstage
+Store Locator - Enable / grant geolocation permissions
+              - Find locations near you
+              - Check in to location near you
+              - Debug check-in button (manually enter location ID from
+                inspector)
 
-  Stage: git push moovstage
-	Prod: git push moovprod 
+Product page  - Like button
+              - Comment using Opengraph
+              - send message to friends
+              - Publish story on newsfeed
+              - Query and return 25 friends and images
 
-## Accounts
+From facebook - after permissions are granted, app appears in sidebar
+
+## Facebook Accounts
+Either use your personal facebook account, or the test one below:
+
 email: brian.kendzior@moovweb.com
-password: m00vw3b
+password: moovweb
 
-## Test Credit Cards
-Name: DO NOT SHIP, DO NOT SHIP
-Email: your moovweb e-mail address (to track order cancellation) 
-Address: DO NOT SHIP
-Post Code: CV10 7RH
+## Function Definitions
+Function definitions and descriptions are in /functions/main.ts starting on
+line 318
 
-Visa CC#: 4444444444444448 (15 4's followed by an 8)
-Expiration: -anything-
-CVV: 123
-
-Visa CC#: 4444333322221111
-Expiration: 12/14
-CVV: 123
-
-## Importing tritium files
-Pair @import statements with a cooresponding call to:
-log_page("Path_to_ts_file_here", "file_name_of_current_ts_file")
-
-This keeps the logging more organized and standard. In many files, the $curr_file
-variable is added to make multiple calls to log_page easier. EX:
-
-$curr_file = 'mappings.ts'
-
-log_page('pages/checkout/basket.ts', $curr_file)
-@import pages/checkout/basket.ts
-
-The corresponding log statement will look like this:
-
-"--> Importing pages/checkout/basket.ts in mappings.ts"
-
-//
-asdfj
+## Future Development
+Additional features:
+- More Opengraph Access
+- payment w/ ecoins
+- figure out channel file hosting
+- style non-native popups to preserve viewport
+- fix browser style refresh issues w/ apple webkit
+- mini-feed posts
+- inject meaningful data into opengraph meta tags
