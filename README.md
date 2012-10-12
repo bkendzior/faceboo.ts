@@ -37,7 +37,7 @@ Note that any site hosted on moovapp.com will not work with Opengraph as
 facebook's crawlers will only be able to see the spash screen
 
 Below is the setup for the current app:
-![screenshot](faceboo.ts/blob/master/fb_setup.jpg)
+![screenshot](https://raw.github.com/bkendzior/faceboo.ts/master/fb_setup.jpg)
 
 ## Future Development
 Additional features:
