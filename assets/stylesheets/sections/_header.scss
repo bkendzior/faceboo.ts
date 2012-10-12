@@ -164,11 +164,11 @@
 // Tritbook
 body[fb_connected='true'] {
   .mw_header {
-    .mw-faceboots-logout, .mw-faceboots-displayName {
+    #mw-faceboots-logout, #mw-faceboots-displayName {
       display: block;
     }
 
-    .mw-faceboots-login {
+    #mw-faceboots-login {
       display: none;
     }
   }
@@ -176,16 +176,16 @@ body[fb_connected='true'] {
 
 body[fb_connected='false'] {
   .mw_header {
-    .mw-faceboots-logout, .mw-faceboots-displayName {
+    #mw-faceboots-logout, #mw-faceboots-displayName {
       display: none;
     }
 
-    .mw-faceboots-login {
+    #mw-faceboots-login {
       display: block;
     }
   }
 }
 
-.mw-faceboots-login, .mw-faceboots-logout {
+#mw-faceboots-login, #mw-faceboots-logout {
   @extend .mw_btn1;
 }
