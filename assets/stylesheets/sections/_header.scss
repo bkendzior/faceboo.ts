@@ -164,9 +164,9 @@
 // Tritbook
 body[fb_connected='true'] {
   background:blue;
-  .mw_header {
+  .mw-header {
     #mw-faceboots-logout, #mw-faceboots-displayName {
-      display: block;
+      display: inline-block;
     }
 
     #mw-faceboots-login {
@@ -178,17 +178,18 @@ body[fb_connected='true'] {
 body[fb_connected='false'] {
 
   background:red;
-  .mw_header {
+  .mw-header {
     #mw-faceboots-logout, #mw-faceboots-displayName {
       display: none;
     }
 
     #mw-faceboots-login {
-      display: block;
+      display: inline-block;
     }
   }
 }
 
 #mw-faceboots-login, #mw-faceboots-logout {
   @extend .mw_btn1;
+  padding: 3px 10px;
 }
