@@ -26,17 +26,17 @@ $("/html") {
   @import sections/header.ts
   @import sections/footer.ts
 
-  @import mappings.ts
+  #@import mappings.ts
 
   # Include mw_analytics file to track the mobile site
-  @import mw_analytics.ts
+  #@import mw_analytics.ts
   
   # Remove all script tags not marked with "data-keep" attribute
-  @import keep_desktop_js.ts
+  #@import keep_desktop_js.ts
 
-  remove_desktop_js()
+  #remove_desktop_js()
   remove_doubleclick_iframe()
   
   # Late load all the images on the site
-  lateload()
+  #lateload()
 }
