@@ -25,4 +25,23 @@ $("./body") {
       }
     }
   }
+
+
+  //Prompt for checkins
+  faceboots_inject_prompt_checkin()
+  insert_bottom("a",id:'prompt_checkin', "Click to enable checkins", onclick:"promptCheckInPermission()")
+
+    // Show Checkins
+  insert_bottom("div", id:'nearby-container') {
+    faceboots_inject_get_nearby(fetch("@id"))
+  }
+  insert_bottom("a",id:"check_in","Get Nearby", onclick:"getNearby();")
+
+  //Check In
+  insert_bottom("div", id:'checkin-container') {
+    faceboots_inject_check_in(fetch("@id"))
+  }
+  insert_bottom("a",id:"check_in","Show your checkins", onclick:"getCheckIns();")
+  insert_bottom("a",id:"check_in","Check yourself in", onclick:"checkin();")
+
 }
