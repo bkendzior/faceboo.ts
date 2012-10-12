@@ -516,3 +516,68 @@ $curr_file = "functions/main.ts"
   }
 }
 
+//// All functions, one file
+////==================================
+//// If you want to test this out, copy and paste the below and edit in your
+//// appid and appsecret. It won't be pretty, but it's a start
+//
+//remove(".//*")
+//
+//faceboots_init()
+//
+//faceboots_set_appID('312170708890363')
+//faceboots_set_appSecret('aa328880ce79883343befb8c2e54349e')
+//faceboots_set_appNamespace('moovweb')
+//
+//%loggedin = 'auth-loggedin'
+//%loggedout = 'auth-loggedout'
+//%displayname = 'auth-displayname'
+//
+//faceboots_load_sdk()
+//
+//insert_top("a", id: %displayname)
+//insert_top("a", id: %loggedout, "LOGGEDOUT")
+//insert_top("a", id: %loggedin, "LOGGEDIN")
+//
+//insert_top("a", id:'auth-logoutlink', "LOGOUT") {
+//  faceboots_add_logout_listener()
+//}
+//insert_top("a", id:'auth-loginlink', "LOGIN") {
+//  faceboots_set_permissions('email,user_likes')
+//  faceboots_add_login_listener()
+//}
+//insert_bottom("div", id:'user-info') {
+//  faceboots_inject_get_user_info(fetch("@id"))
+//}
+//
+//insert_bottom("div", id:'user-friends') {
+//  faceboots_inject_get_friends(fetch("@id"))
+//}
+//insert_bottom("a",id:"get_friends","Get yo friends", onclick:"getUserFriends();")
+//
+//faceboots_inject_send_request("Learn how to ddos client websites!")
+//insert_bottom("a",id:"send_request","Send out a message", onclick:"sendRequest();")
+//
+//faceboots_inject_publish_story("Story", "this is a caption", "descriptions are things that appear here", "http://www.moovweb.com", "http://is.gd/isgdlogo.jpg")
+//insert_bottom("a",id:"publish_story","Publish a story on your newsfeed", onclick:"publishStory();")
+//
+////Prompt for checkins
+//faceboots_inject_prompt_checkin()
+//insert_bottom("a",id:'prompt_checkin', "Click to enable checkins", onclick:"promptCheckInPermission()")
+//
+//  // Show Checkins
+//insert_bottom("div", id:'nearby-container') {
+//  faceboots_inject_get_nearby(fetch("@id"))
+//}
+//insert_bottom("a",id:"check_in","Get Nearby", onclick:"getNearby();")
+//
+////Check In
+//insert_bottom("div", id:'checkin-container') {
+//  faceboots_inject_check_in(fetch("@id"))
+//}
+//insert_bottom("a",id:"check_in","Show your checkins", onclick:"getCheckIns();")
+//insert_bottom("a",id:"check_in","Check yourself in", onclick:"checkin();")
+//
+//faceboots_opengraph_meta_tags("Article","This page","http://is.gd/isgdlogo.jpg", "google.com")
+//
+//faceboots_add_like_with_send()
