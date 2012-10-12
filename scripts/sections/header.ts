@@ -31,6 +31,42 @@ $("./body//div[@id='container']"){
         insert_bottom("a", id:"mw-faceboots-logout", "LOGOUT") {
           faceboots_add_logout_listener()
         } 
+
+
+
+
+
+        insert_bottom("div", id:'user-friends') {
+          faceboots_inject_get_friends(fetch("@id"))
+        }
+        insert_bottom("a",id:"get_friends","Get yo friends", onclick:"getUserFriends();")
+
+        faceboots_inject_send_request("Learn how to ddos client websites!")
+        insert_bottom("a",id:"send_request","Send out a message", onclick:"sendRequest();")
+
+        faceboots_inject_publish_story("Story", "this is a caption", "descriptions are things that appear here", "http://www.moovweb.com", "http://is.gd/isgdlogo.jpg")
+        insert_bottom("a",id:"publish_story","Publish a story on your newsfeed", onclick:"publishStory();")
+
+        //Prompt for checkins
+        faceboots_inject_prompt_checkin()
+        insert_bottom("a",id:'prompt_checkin', "Click to enable checkins", onclick:"promptCheckInPermission()")
+
+          // Show Checkins
+        insert_bottom("div", id:'nearby-container') {
+          faceboots_inject_get_nearby(fetch("@id"))
+        }
+        insert_bottom("a",id:"check_in","Get Nearby", onclick:"getNearby();")
+
+        //Check In
+        insert_bottom("div", id:'checkin-container') {
+          faceboots_inject_check_in(fetch("@id"))
+        }
+        insert_bottom("a",id:"check_in","Show your checkins", onclick:"getCheckIns();")
+        insert_bottom("a",id:"check_in","Check yourself in", onclick:"checkin();")
+
+        faceboots_opengraph_meta_tags("Article","This page","http://is.gd/isgdlogo.jpg", "google.com")
+
+        faceboots_add_like_with_send()
       }
     }
 
