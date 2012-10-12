@@ -2,7 +2,6 @@ $("/html/body") {
   attribute("fb_connected", "false")
 }
 
-
 faceboots_init()
 
 faceboots_set_appID('411584758897232')
