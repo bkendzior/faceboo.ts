@@ -22,7 +22,7 @@ Product page
 * Query and return 25 friends and images
 
 From facebook-mobile
-*after permissions are granted, app appears in sidebar
+* After permissions are granted, app appears in sidebar
 
 ## Facebook Accounts
 Either use your personal facebook account, or the test one below:
