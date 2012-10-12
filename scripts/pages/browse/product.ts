@@ -11,21 +11,6 @@ $(".//script[contains(text(),'$BV')]") {
 $("./body") {
   add_class("mw-product")
 
-  faceboots_opengraph_meta_tags("Article","This page",$host+$path, "google.com")
-
-  faceboots_add_like_with_send()
-
-  insert_bottom("div", id:'user-friends') {
-    faceboots_inject_get_friends(fetch("@id"))
-  }
-  insert_bottom("a",id:"get_friends","Get yo friends", onclick:"getUserFriends();")
-
-  faceboots_inject_send_request("Learn how to ddos client websites!")
-  insert_bottom("a",id:"send_request","Send out a message", onclick:"sendRequest();")
-
-  faceboots_inject_publish_story("Story", "this is a caption", "descriptions are things that appear here", "http://www.moovweb.com", "http://is.gd/isgdlogo.jpg")
-  insert_bottom("a",id:"publish_story","Publish a story on your newsfeed", onclick:"publishStory();")
-
 
   $(".//div[@id='main']") {
     
@@ -195,6 +180,24 @@ $("./body") {
             insert("div")
           }
         }  
+      }
+
+      // TRITBOOK
+      insert_bottom("div",id:"mw_tritbook") {
+        faceboots_opengraph_meta_tags("Article","PRODUCT","http://is.gd/isgdlogo.jpg", $host+$path)
+
+        faceboots_add_like_with_send()
+
+        insert_bottom("div", id:'user-friends') {
+          faceboots_inject_get_friends(fetch("@id"))
+        }
+        insert_bottom("a",id:"get_friends","Get yo friends", onclick:"getUserFriends();")
+
+        faceboots_inject_send_request("Learn how to ddos client websites!")
+        insert_bottom("a",id:"send_request","Send out a message", onclick:"sendRequest();")
+
+        faceboots_inject_publish_story("Story", "this is a caption", "descriptions are things that appear here", "http://www.moovweb.com", "http://is.gd/isgdlogo.jpg")
+        insert_bottom("a",id:"publish_story","Publish a story on your newsfeed", onclick:"publishStory();")
       }
     }
 

@@ -286,4 +286,30 @@ body.mw-product {
       @include leader(.5);
       @include trailer(1);
   }
+
+
+  //TRITBOOK
+  #content {
+  
+      // Tritbook
+    body[fb_connected='true'] {
+      #mw_tritbook {
+        display: block;
+
+        > *:not(script):not(div) {
+          @extend .mw_btn3;
+          padding: 10px;
+          margin: 10px;
+          display: block;
+          text-align: center; 
+        }
+      }
+    }
+
+    body[fb_connected='false'] {
+      #mw_tritbook {
+        display: none;
+      }
+    }
+  }
 }
