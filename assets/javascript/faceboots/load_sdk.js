@@ -9,6 +9,12 @@
   js = d.createElement('script'); js.id = id; js.async = true;
   js.src = "//connect.facebook.net/en_US/all.js";
   ref.parentNode.insertBefore(js, ref);
+
+  // Force redraw
+  document.body.style.display = "block";
+  document.body.offsetHeight;
+  document.body.style.display = "";
+
 }(document));
 
 // Init the SDK upon load
