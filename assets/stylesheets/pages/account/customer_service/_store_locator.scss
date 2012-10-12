@@ -1,4 +1,4 @@
-.mw-store_locator {
+body.mw-store_locator {
   // Google maps canvas
   #DOMWindow {
     width: 90% !important;
@@ -51,6 +51,38 @@
       display: block;
     }
   
+  }
+
+  &[checkin='true'] {
+    form#locator > #mw_loc {
+      *#prompt_checkin {
+        display: none; 
+      }
+      *:not(#prompt_checkin) {
+        display: block; 
+      }
+    }
+
+  }
+
+  &[checkin='false'] {
+    form#locator > #mw_loc {
+      *#prompt_checkin {
+        display: block; 
+      }
+      *:not(#prompt_checkin) {
+        display: none; 
+      }
+    }
+  }
+  form#locator > #mw_loc {
+    > a {
+      @extend .mw_btn3;
+      padding: 10px;
+      margin: 10px;
+      display: block;
+      text-align: center;
+    }
   }
 }   
 
