@@ -16,6 +16,8 @@ match($content_type) {
       
         @import device_detection.ts
 
+        @import define_faceboots.ts
+
         @import html.ts
       }
     }
