@@ -30,6 +30,8 @@ $("./body//div[@id='container']"){
         } 
 
         insert_bottom("div", id:"mw-faceboots-displayName") {
+          faceboots_inject_get_user_info(fetch("@id"))
+        }       
       }
 
     }
