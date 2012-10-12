@@ -509,9 +509,10 @@ $curr_file = "functions/main.ts"
   }
 
   // Add call to update user info inside HandleStatusChange
-  $("/html//script[contains(text(),'//UPDATE_USER_INFO')]") {
+  $("//script[contains(text(),'//UPDATE_USER_INFO')]") {
     text() {
       replace(/\/\/UPDATE_USER_INFO/,"updateUserInfo(response);")
     }
   }
 }
+
