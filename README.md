@@ -8,19 +8,21 @@ device or simulator
 ## Demo Features 
 Header of every page - Login/Logout w/ user name and photo
 
-Store Locator * Enable / grant geolocation permissions
-              * Find locations near you
-              * Check in to location near you
-              * Debug check-in button (manually enter location ID from
-                inspector)
+Store Locator 
+* Enable / grant geolocation permissions
+* Find locations near you
+* Check in to location near you
+* Debug check-in button (manually enter location ID from inspector)
 
-Product page  * Like button
-              * Comment using Opengraph
-              * send message to friends
-              * Publish story on newsfeed
-              * Query and return 25 friends and images
+Product page  
+* Like button
+* Comment using Opengraph
+* send message to friends
+* Publish story on newsfeed
+* Query and return 25 friends and images
 
-From facebook - after permissions are granted, app appears in sidebar
+From facebook-mobile
+*after permissions are granted, app appears in sidebar
 
 ## Facebook Accounts
 Either use your personal facebook account, or the test one below:
