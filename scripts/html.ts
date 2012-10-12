@@ -4,6 +4,8 @@ $("/html") {
   
   remove("//script")
   
+  @import define_faceboots.ts
+
   rewrite_links()
   absolutize_srcs()
 
