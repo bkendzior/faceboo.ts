@@ -161,6 +161,8 @@
   display: none;
 }
 
+
+
 // Tritbook
 body[fb_connected='true'] {
   .mw-header {
@@ -194,4 +196,9 @@ body[fb_connected='false'] {
 
 #mw-faceboots-displayName {
   vertical-align: middle;
+}
+
+
+#mw-faceboots-login, #mw-faceboots-logout, #mw-faceboots-displayName {
+  display: none;
 }
