@@ -33,7 +33,7 @@ function handleStatusChange(response) {
   response.authResponse ? document.body.setAttribute("fb_connected", "true") : document.body.setAttribute("fb_connected", "false"); 
 
   // Force redraw
-  document.body.offsetHeight;``
+  document.body.offsetHeight;
 
   if (response.authResponse) {
     console.log(response);
