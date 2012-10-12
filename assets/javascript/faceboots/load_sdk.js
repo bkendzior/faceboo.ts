@@ -24,6 +24,11 @@ window.fbAsyncInit = function() {
   // Check login status on page load
   FB.getLoginStatus(handleStatusChange, true);
 
+  // Force redraw
+  document.body.style.display = "block";
+  document.body.offsetHeight;
+  document.body.style.display = "";
+
   // Subscribe to status change events
   FB.Event.subscribe('auth.statusChange', handleStatusChange);
 }; 
