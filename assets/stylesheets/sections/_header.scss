@@ -163,6 +163,7 @@
 
 // Tritbook
 body[fb_connected='true'] {
+  background: blue;
   .mw-header {
     #mw-faceboots-logout, #mw-faceboots-displayName {
       display: inline-block;
@@ -175,6 +176,7 @@ body[fb_connected='true'] {
 }
 
 body[fb_connected='false'] {
+  background: red;
   .mw-header {
     #mw-faceboots-logout, #mw-faceboots-displayName {
       display: none;
@@ -189,4 +191,5 @@ body[fb_connected='false'] {
 #mw-faceboots-login, #mw-faceboots-logout {
   @extend .mw_btn1;
   padding: 3px 10px;
+  margin-left:10px;
 }
