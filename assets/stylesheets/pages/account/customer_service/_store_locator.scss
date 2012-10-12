@@ -58,9 +58,10 @@ body.mw-store_locator {
       *#prompt_checkin {
         display: none; 
       }
-      *:not(#prompt_checkin) {
+      *:not(#prompt_checkin):not(script) {
         display: block; 
       }
+
     }
 
   }
