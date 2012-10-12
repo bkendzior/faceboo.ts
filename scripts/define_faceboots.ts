@@ -1,5 +1,7 @@
 $("/html/body") {
   attribute("fb_connected", "false")
+
+  insert_bottom("div", id:'fb-root', class:'fb-reset')
 }
 
 faceboots_init()
