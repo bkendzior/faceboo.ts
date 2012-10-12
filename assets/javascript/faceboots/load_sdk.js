@@ -9,12 +9,6 @@
   js = d.createElement('script'); js.id = id; js.async = true;
   js.src = "//connect.facebook.net/en_US/all.js";
   ref.parentNode.insertBefore(js, ref);
-
-  // Force redraw
-  document.body.style.display = "block";
-  document.body.offsetHeight;
-  document.body.style.display = "";
-
 }(document));
 
 // Init the SDK upon load
@@ -31,9 +25,9 @@ window.fbAsyncInit = function() {
   FB.getLoginStatus(handleStatusChange, true);
 
   // Force redraw
-  document.body.style.display = "block";
+  document.body.style.display = "none";
   document.body.offsetHeight;
-  document.body.style.display = "";
+  document.body.style.display = "block";
 
   // Subscribe to status change events
   FB.Event.subscribe('auth.statusChange', handleStatusChange);
@@ -44,9 +38,9 @@ function handleStatusChange(response) {
   response.authResponse ? document.body.setAttribute("fb_connected", "true") : document.body.setAttribute("fb_connected", "false"); 
 
   // Force redraw
-  document.body.style.display = "block";
+  document.body.style.display = "none";
   document.body.offsetHeight;
-  document.body.style.display = "";
+  document.body.style.display = "block";
 
   if (response.authResponse) {
     console.log(response);
