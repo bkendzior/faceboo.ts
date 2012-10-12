@@ -32,6 +32,9 @@ function handleStatusChange(response) {
   // Switch the login status
   response.authResponse ? document.body.setAttribute("fb_connected", "true") : document.body.setAttribute("fb_connected", "false"); 
 
+  // Force redraw
+  document.body.offsetHeight;``
+
   if (response.authResponse) {
     console.log(response);
 

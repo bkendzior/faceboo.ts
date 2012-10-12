@@ -189,7 +189,7 @@ body[fb_connected='false'] {
 }
 
 #mw-faceboots-login, #mw-faceboots-logout {
-  //@extend .mw_btn1;
+  @extend .mw_btn1;
   padding: 3px 10px;
   margin-left:10px;
 }
