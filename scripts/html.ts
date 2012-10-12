@@ -1,6 +1,9 @@
 # HTML Transformations go here
 
 $("/html") {
+  
+  remove("//script")
+  
   rewrite_links()
   absolutize_srcs()
 
