@@ -19,6 +19,19 @@ $("./body//div[@id='container']"){
         }
       }
 
+      // Facebook login
+      insert_bottom("div", id:"mw-faceboots-section") {
+        insert_bottom("a", id:"mw-faceboots-login") {
+          faceboots_set_permissions('email,user_likes')
+          faceboots_add_login_listener()
+        } 
+        insert_bottom("a", id:"mw-faceboots-logout") {
+          faceboots_add_logout_listener()
+        } 
+
+        insert_bottom("div", id:"mw-faceboots-displayName") {
+      }
+
     }
 
     // Find a store button
