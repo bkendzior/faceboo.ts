@@ -4,6 +4,11 @@ function promptCheckInPermission() {
     if (response.authResponse) {
       //User granted permissions
       document.body.setAttribute("checkin","true")
+
+      // Force redraw
+      document.body.style.display = "none";
+      document.body.offsetHeight;
+      document.body.style.display = "block";
     } 
     else {
       //User didn't grant permissions
