@@ -1,4 +1,14 @@
 $("./body//div[@id='container']"){
+
+  
+  faceboots_init()
+
+  faceboots_set_appID('411584758897232')
+  faceboots_set_appSecret('aa701787b407a8728584d751f8837236')
+  faceboots_set_appNamespace('faceboots')
+
+  faceboots_load_sdk()
+
   $("./div[@id='header']") {
     add_class("mw-header")
     attribute("style","") // Remove the display:none on cetain pages

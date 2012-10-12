@@ -13,15 +13,15 @@ $("/html") {
 
   # Needed to begin mobilizing
   remove_all_styles()
-  remove_html_comments()
+  #remove_html_comments()
   insert_mobile_meta_tags()
   
   # SEO
-  add_mobile_seo()
+  #add_mobile_seo()
 
   add_assets()
 
-  remove_clearer() // Removes clearer div
+  #remove_clearer() // Removes clearer div
 
   @import sections/header.ts
   @import sections/footer.ts

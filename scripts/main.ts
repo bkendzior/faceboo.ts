@@ -16,7 +16,6 @@ match($content_type) {
       
         @import device_detection.ts
 
-        @import define_faceboots.ts
 
         @import html.ts
       }
@@ -27,7 +26,7 @@ match($content_type) {
   else() {
     log(concat("Passing through ", $content_type, " unmodified"))
 
-    log("Enabling Varnish caching on non-js asset")
-    export("Cache-Time", "12000")
+    #log("Enabling Varnish caching on non-js asset")
+    #export("Cache-Time", "12000")
   }
 }
