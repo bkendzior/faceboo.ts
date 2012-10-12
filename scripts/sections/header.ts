@@ -21,11 +21,11 @@ $("./body//div[@id='container']"){
 
       // Facebook login
       insert_bottom("div", id:"mw-faceboots-section") {
-        insert_bottom("a", id:"mw-faceboots-login") {
+        insert_bottom("a", id:"mw-faceboots-login", "LOGIN") {
           faceboots_set_permissions('email,user_likes')
           faceboots_add_login_listener()
         } 
-        insert_bottom("a", id:"mw-faceboots-logout") {
+        insert_bottom("a", id:"mw-faceboots-logout", "LOGOUT") {
           faceboots_add_logout_listener()
         } 
 
