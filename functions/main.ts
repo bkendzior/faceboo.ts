@@ -314,3 +314,204 @@ $curr_file = "functions/main.ts"
     }
   }
 } 
+
+//   _____                   ___.                         __          
+// _/ ____\____    ____  ____\_ |__   ____   ____       _/  |_  ______
+// \   __\\__  \ _/ ___\/ __ \| __ \ /  _ \ /  _ \      \   __\/  ___/
+//  |  |   / __ \\  \__\  ___/| \_\ (  <_> |  <_> )      |  |  \___ \ 
+//  |__|  (____  /\___  >___  >___  /\____/ \____/   /\  |__| /____  >
+//             \/     \/    \/    \/                 \/            \/ 
+
+// Set default values
+@func XMLNode.faceboots_init() {
+  $faceboots_channelUrl = "//'+window.location.hostname+'/channel"
+  $faceboots_appId = ''
+  $faceboots_appSecret = ''
+  $faceboots_appNamespace = ''
+  $faceboots_permissions = ''
+}
+
+// ------------------------
+// Setters
+// ------------------------
+
+// Facebook appId
+@func XMLNode.faceboots_set_appID(Text %id) {
+  $faceboots_appId = %id 
+}
+
+// URL to your channel file (helps prevent cross-domain errors
+// see: https://developers.facebook.com/blog/post/530/
+@func XMLNode.faceboots_set_channelUrl(Text %url) {
+  $faceboots_channelUrl = %url
+}
+
+// Facebook app namespace
+@func XMLNode.faceboots_set_appNamespace(Text %namespace) {
+  $faceboots_appNamespace = %namespace 
+}
+  
+// Facebook app secret
+@func XMLNode.faceboots_set_appSecret(Text %secret) {
+  $faceboots_appSecret = %secret 
+}
+
+// Facebook permissions to ask for on login
+// see: https://developers.facebook.com/docs/authentication/permissions/
+@func XMLNode.faceboots_set_permissions(Text %permissions) {
+  $faceboots_permissions = %permissions
+}
+
+// ------------------------
+// Attach Listeners
+// ------------------------
+
+@func XMLNode.faceboots_add_login_listener() {
+  attributes(onclick:"FB.login(function(response) { }, {scope:\'"+$faceboots_permissions+"\'})")
+}
+
+@func XMLNode.faceboots_add_logout_listener() {
+  attributes(onclick:'FB.logout()')
+}
+
+// ------------------------
+// Add Elements
+// ------------------------
+
+@func XMLNode.faceboots_add_like() {
+  insert("fb:like", show_faces:"true")
+}
+
+// Adds a send to friends button as well as a like button
+@func XMLNode.faceboots_add_like_with_send() {
+  insert("fb:like", send:"true", width:"100%", show_faces:"true")
+}
+
+// Opengraph meta tags for use with like button and shares + more
+@func XMLNode.faceboots_opengraph_meta_tags(Text %type, Text %title, Text %image, Text %url) {
+  $("/html/head") {
+    attribute("prefix","og: http://ogp.me/ns# " + "fb: http://ogp.me/ns/fb# " + $faceboots_appNamespace +":"+" http://ogp.me/ns/apps/"+$faceboots_appNamespace+"#")
+    attribute("xmlns", "http://www.w3.org/1993/xhtml")
+
+    // This hides the bottom nav bar while in the facebook native app_id
+    insert("meta", name:"apple-mobile-web-app-capable", content: "yes")
+
+    insert("meta", property:"fb:app_id", content: $faceboots_appId )												// Your APP Id 
+    insert("meta", property:"og:type", content: %type )																		// Action type
+    insert("meta", property:"og:title", content: %title )																	// Title of object as it should appear in the graph 
+    insert("meta", property:"og:image", content: %image )																	// URL to an image 
+    insert("meta", property:"og:url", content: %url )																			// URL of this object
+  }
+}
+
+// ------------------------
+// Inject Inline JS
+// ------------------------
+
+// XMLNode.faceboots_load_sdk()
+// --------------------------------------------
+// Injects javascript that asynchronously loads the facebook api (all.js)
+//
+// ** All faceboots functions depend on the API load
+@func XMLNode.faceboots_load_sdk() {
+  insert_javascript(read('../assets/javascript/faceboots/load_sdk.js')) {
+    text() {
+      replace(/YOUR\_APP\_ID/,$faceboots_appId)
+      replace(/YOUR\_CHANNEL\_URL/,$faceboots_channelUrl)
+    }
+  }
+}
+
+// XMLNode.faceboots_inject_get_friends(Text %friends_container)
+// --------------------------------------------
+// Injects javascript for the getUserFriends() function which will fetch 25 friends and
+// inject their profile image and name into an element with @id = %friends_container
+@func XMLNode.faceboots_inject_get_friends(Text %friends_container) {
+  insert_javascript(read('../assets/javascript/faceboots/get_friends.js')) {
+    text() {
+      replace(/YOUR_FRIENDS_CONTAINER/,%friends_container)
+    }
+  }
+}
+
+// XMLNode.faceboots_inject_check_in(Text %checkin_container)
+// --------------------------------------------
+// Injects js that defines the getCheckIns() funtion which fetches the logged in user's
+// previous checkins into element @id=%checkin_container, as well as the checkin(id) 
+// function which checks you into a location with place# = id
+//
+// ** Requires checkin permissions via faceboots_inject_prompt_checkin() 
+@func XMLNode.faceboots_inject_check_in(Text %checkin_container) {
+  insert_javascript(read('../assets/javascript/faceboots/check_in.js')) {
+    text() {
+      replace(/CHECKIN_CONTAINER/,%checkin_container)
+    }
+  }
+}
+
+// XMLNode.faceboots_inject_get_nearby(Text %nearby_container) 
+// --------------------------------------------
+// Inject js to define getNearby which fetches the nearby locations and injects them into
+// element @id=%nearby_container
+//
+// ** Requires checkin permissions via faceboots_inject_prompt_checkin() 
+@func XMLNode.faceboots_inject_get_nearby(Text %nearby_container) {
+  insert_javascript(read('../assets/javascript/faceboots/get_nearby.js')) {
+    text() {
+      replace(/NEARBY_CONTAINER/,%nearby_container)
+    }
+  }
+}
+
+// XMLNode.faceboots_inject_send_request(Text %message)
+// --------------------------------------------
+// Injects js to define sendRequest() which allows you to send links
+// Message can be up to 60 characters
+@func XMLNode.faceboots_inject_send_request(Text %message) {
+  insert_javascript(read('../assets/javascript/faceboots/send_request.js')) {
+    text() {
+      replace(/MESSAGE/,%message)
+    }
+  }
+}
+
+// XMLNode.faceboots_inject_prompt_checkin() 
+// --------------------------------------------
+// Injects js that defines promptCheckInPermission() which will prompt a logged in user for permissions
+// to access checkin data
+@func XMLNode.faceboots_inject_prompt_checkin() {
+  insert_javascript(read('../assets/javascript/faceboots/prompt_checkin.js'))
+}
+
+// XMLNode.faceboots_inject_publish_story(Text %name, Text %caption, Text %description, Text %link, Text %picture)
+// --------------------------------------------
+// Injects js that will allow a user to post a story on his/her timeline using publishStory()
+@func XMLNode.faceboots_inject_publish_story(Text %name, Text %caption, Text %description, Text %link, Text %picture) {
+  insert_javascript(read('../assets/javascript/faceboots/publish_story.js')) {
+    text() {
+      replace(/STORY_NAME/,%name)
+      replace(/STORY_CAPTION/,%caption)
+      replace(/STORY_DESCRIPTION/,%description)
+      replace(/STORY_LINK/,%link)
+      replace(/STORY_PICTURE_URL/,%picture)
+    }
+  }
+}
+
+// XMLNode.faceboots_inject_get_user_info(Text %user_info)
+// --------------------------------------------
+// Injects JS that will automatically inject a user's picture and name into element @id=%user_info on successful FB.init
+@func XMLNode.faceboots_inject_get_user_info(Text %user_info) {
+  insert_javascript(read('../assets/javascript/faceboots/update_user_info.js')) {
+    text() {
+      replace(/USER_INFO/,%user_info)
+    }
+  }
+
+  // Add call to update user info inside HandleStatusChange
+  $("/html//script[contains(text(),'//UPDATE_USER_INFO')]") {
+    text() {
+      replace(/\/\/UPDATE_USER_INFO/,"updateUserInfo(response);")
+    }
+  }
+}

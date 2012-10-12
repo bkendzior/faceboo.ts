@@ -1,5 +1,6 @@
 {
 	"host_map": [
+    "faceboots.hazasite.com => www.hollandandbarrett.com",
 	  "$.hollandandbarrett.com => www.hollandandbarrett.com"
 	],
   "compass": true
